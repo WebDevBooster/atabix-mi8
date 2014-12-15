@@ -6,7 +6,12 @@
     "js/mi8.js"
   ],
   "dependencies": {
-    "foundation": ">= 5.4.1"
+    "foundation": ">= 5.4.1",
+    "sweetalert": "0.3.2",
+    "highcharts": "https://github.com/highslide-software/highcharts-release.git",
+    "atabix-mi8": "https://github.com/atabix/atabix-mi8.git",
+    "select2": "latest",
+    "mousetrap": "https://github.com/ccampbell/mousetrap.git"
   },
   "private": true
 }
