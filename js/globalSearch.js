@@ -1,5 +1,5 @@
 $(function() {
-    $(document).bind('keydown', 'ctrl+a', function() {
-        console.log('Yes een shortcut doet het!');
+    Mousetrap.bind('command+shift+s', function(e) {
+        console.log('Ik ga soekuh ja!!!');
     });
 });
