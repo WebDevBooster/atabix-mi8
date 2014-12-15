@@ -6,7 +6,10 @@
     "js/mi8.js"
   ],
   "dependencies": {
-    "foundation": ">= 5.4.1",
+    "foundation": "5.4.7",
+    "jquery-form": "latest",
+    "jqueryui": "latest",
+    "jquery-file-upload": "latest",
     "sweetalert": "0.3.2",
     "highcharts": "https://github.com/highslide-software/highcharts-release.git",
     "atabix-mi8": "https://github.com/atabix/atabix-mi8.git",
