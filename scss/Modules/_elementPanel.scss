@@ -1,0 +1,55 @@
+.elementPanel {
+  width:100%;
+  height: auto;
+  overflow: hidden;
+  background: $white;
+  border-radius: $global-radius;
+  border: 1px solid $section-border-color;
+  margin-bottom: $column-gutter;
+
+  .title {
+    border-bottom: 1px solid $section-border-color;
+    padding: rem-calc(10) rem-calc(20);
+    background: #eef2f6;
+    height: rem-calc(56);
+    overflow: hidden;
+
+    h3 {
+      color: #849db8;
+      margin: 0;
+      padding-top: rem-calc(8);
+      font-size: rem-calc(16);
+    }
+
+    .button {
+      margin-bottom: 0;
+    }
+  }
+
+  .content {
+    position: relative;
+    background: $white;
+    overflow: hidden;
+
+    .bodyText {
+      padding: rem-calc(10) rem-calc(20);
+    }
+
+
+    // TICKETS PANEL
+
+    &.tickets {
+      table {
+
+      }
+    }
+  }
+
+  .footer {
+    border-bottom: 1px solid $section-border-color;
+    padding: rem-calc(10) rem-calc(20);
+    background: #ecf1f5;
+    height: rem-calc(56);
+    overflow: hidden;
+  }
+}

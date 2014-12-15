@@ -1,0 +1,48 @@
+.tabs {
+  padding-top: $column-gutter / 2;
+
+  .tab-title {
+    margin-left: rem-calc(10);
+    margin-right: rem-calc(10);
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-top-left-radius: $global-radius;
+    border-top-right-radius: $global-radius;
+
+    a {
+      displayL: block;
+      background-color: transparent;
+      padding: rem-calc(10);
+      padding-bottom: rem-calc(5);
+      margin-bottom: rem-calc(-1);
+      border-top-left-radius: $global-radius;
+      border-top-right-radius: $global-radius;
+      &:hover {
+        background: none;
+      }
+    }
+
+    &.active {
+      border-top: 1px solid $section-border-color;
+      border-left: 1px solid $section-border-color;
+      border-right: 1px solid $section-border-color;
+      a {
+        background-color: $mainpanel-bg-color;
+      }
+    }
+  }
+}
+
+.tabs-content {
+  margin-bottom: 0;
+  border-top: 1px solid $section-border-color;
+
+  .content {
+    background: $mainpanel-bg-color!important;
+  }
+
+  section {
+    background: transparent;
+  }
+}

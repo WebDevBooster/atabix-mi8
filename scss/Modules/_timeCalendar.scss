@@ -1,0 +1,59 @@
+// Temporary markup on behalf of Paul. Will be deleted!
+
+.timeline {
+  position: absolute;
+  left: 59px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 999;
+  border: 1px solid red;
+}
+
+.contact,
+.fc-agenda .contact .fc-event-time,
+.contact a {
+  background-color: #d41243;  /* background color */
+  border-color: #d41243;      /* border color */
+  color: #FFFFFF;             /* text color */
+}
+
+.change,
+.fc-agenda .change .fc-event-time,
+.change a {
+  background-color: #ed800a;  /* background color */
+  border-color: #ed800a;      /* border color */
+  color: #FFFFFF;             /* text color */
+}
+
+.deadline,
+.fc-agenda .deadline .fc-event-time,
+.deadline a {
+  background-color: #393f70;  /* background color */
+  border-color: #393f70;      /* border color */
+  color: #FFFFFF;             /* text color */
+}
+
+// End of temporary Markup!
+
+
+.fc {
+  .fc-toolbar {
+    border: 1px solid red;
+
+    .fc-right {
+
+    }
+    .fc-center {
+      padding-top: rem-calc(5);
+
+      h2 {
+        font-size: rem-calc(18);
+        font-weight: 700;
+      }
+    }
+    .fc-left {
+
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "atabix-mi8",
+  "version": "1.0",
+  "main": [
+    "css/mi8.css",
+    "js/mi8.js"
+  ],
+  "dependencies": {
+    "foundation": ">= 5.4.1"
+  },
+  "private": true
+}
