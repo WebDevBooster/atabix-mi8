@@ -6,7 +6,6 @@ $(function() {
     $("#globalSearch").globalSearch();
     
     Mousetrap.bind('command+shift+s', function(e) {
-        console.log("Execute search");
         $("#globalSearch").globalSearch('open');
     });
 });
