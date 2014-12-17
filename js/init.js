@@ -3,10 +3,10 @@ $(function() {
         fistday: 1
     });
     
-    $("#globalsearch").globalSearch();
+    $("#globalSearch").globalSearch();
     
     Mousetrap.bind('command+shift+s', function(e) {
         console.log("Execute search");
-        $("#globalsearch").globalSearch('open');
+        $("#globalSearch").globalSearch('open');
     });
 });
