@@ -11,6 +11,8 @@
     return this.each(function() {        
 
       // Tooltip plugin code here
+      console.log("INIT GLOBAL SEARCH FOR");
+      console.log(this);
 
     });
 
