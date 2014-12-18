@@ -10,7 +10,7 @@
     "jquery-form": "latest",
     "jqueryui": "latest",
     "jquery-file-upload": "latest",
-    "sweetalert": "latest",
+    "sweetalert": "https://github.com/t4t5/sweetalert.git",
     "highcharts": "https://github.com/highslide-software/highcharts-release.git",
     "atabix-mi8": "https://github.com/atabix/atabix-mi8.git",
     "select2": "latest",
