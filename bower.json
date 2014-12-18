@@ -12,7 +12,7 @@
     "jquery-file-upload": "latest",
     "highcharts": "https://github.com/highslide-software/highcharts-release.git",
     "atabix-mi8": "https://github.com/atabix/atabix-mi8.git",
-    "atabix-sweetalert": "https://github.com/atabix/sweetalert.git#latest",
+    "atabix-sweetalert": "latest",
     "select2": "latest",
     "mousetrap": "https://github.com/ccampbell/mousetrap.git"
   },
