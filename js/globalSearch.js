@@ -6,6 +6,10 @@
             url: '/admin/global-search',
             prefill: '',
             delay: 750,
+            currentIndex: 0,
+            lastSearchQuery: '',
+            resultCount: 0,
+            results: false,
             selected: 0
 		};
         
@@ -28,15 +32,13 @@
 				openSearch: function () {
                     $('#'+this.settings.id).trigger('click');
                     this.activate();
-                    this.element.activate();
 				},
 				
 				activate: function () {
-                    $searchbox = $('#'+this.settings.id+'_searchField');
+                    var $searchbox = $('#'+this.settings.id+'_searchField');
                     setTimeout(function() {
-                        console.log($searchbox);
                         $searchbox.focus();
-                    }, 1000);
+                    }, 500);
 				},
 				
 				closeSearch: function() {
@@ -46,11 +48,19 @@
 				execSearch: function() {
                     $searchbox = $('#'+this.settings.id+'_searchField');
     				
+    				
+    				var query = $searchbox.val();
     				var e = this;
+    				
+    				// Do not search same result
+    				if(this.settings.lastSearchQuery == query) return false;
+    				
+    				this.settings.lastSearchQuery = query;
     				$.get("/admin/global-search", {
-    				          "query": $searchbox.val()
+    				          "query": query
     				    }, function(json) {
-        				    e.setResults(json);
+        				    e.settings.results = json;
+        				    e.setResults();
     				    }, "json"
     				);
 				},
@@ -59,36 +69,52 @@
     				
     				var object = $(this).data('element');
     				
-    				if( e.which==16 ||
-    				    e.which==17 ||
-    				    e.which==18 ||
-    				    e.which==19 ||
-    				    e.which==20 ||
-    				    e.which==27 ||
-    				    e.which==33 ||
-    				    e.which==34 ||
-    				    e.which==35 ||
-    				    e.which==36 ||
-    				    e.which==37 ||
-    				    e.which==38 ||
-    				    e.which==39 ||
-    				    e.which==40 
-    				) return false;
-    				console.log('do search');
-    				
+                    switch(e.which) {
+                        case 38:
+                            if(object.settings.lastSearchQuery.length>0) object.resultUp();
+                            return;
+                        break;
+                        
+                        case 40:
+                            if(object.settings.lastSearchQuery.length>0) object.resultDown();
+                            return;
+                        break;
+                        
+                        case 18:
+                        case 19:
+                        case 20:
+                        case 27:
+                        case 33:
+                        case 34:
+                        case 35:
+                        case 36:
+                        case 37:
+                        case 38:
+                        case 39:
+                        case 40:
+                            return false;
+                        break;
+                    }
+                    
                     clearTimeout(searchTimeout);
                     searchTimeout = setTimeout(function() {
                         object.execSearch();
                     }, object.settings.delay);
 				},
-				setResults: function(results) {
+				
+				setResults: function() {
                     $resultList = $('#'+this.settings.id+'_resultList');
                     $resultPreview = $('#'+this.settings.id+'_resultPreview');
                     
                     var isFirst = true;
+                    var results = this.settings.results;
                     
                     $resultList.html('');
+                    this.settings.resultCount = 0;
+                    this.settings.currentIndex = 0;
+                    
                     for(var i in results) {
+                        this.settings.resultCount++;
                         var tmp = results[i];
                         var $list = $('<li>');
                         var $link = $('<a>').attr("href", tmp.url).html(tmp.name).appendTo($list);
@@ -101,6 +127,43 @@
                         }
                         isFirst = false;
                     }
+                    this.activateResult();
+				},
+				
+				resultUp: function() {
+    				var newIndex = Math.max(0, this.settings.currentIndex-1)
+    				this.settings.currentIndex = newIndex;
+    				this.activateResult();
+				},
+				
+				resultDown: function() {
+    				var newIndex = Math.min(this.settings.resultCount-1, this.settings.currentIndex+1)
+    				this.settings.currentIndex = newIndex;
+    				this.activateResult();
+				},
+				
+				activateResult: function() {
+    				
+    				var index = this.settings.currentIndex;
+    				var results = this.settings.results;
+    				
+                    $resultPreview = $('#'+this.settings.id+'_resultPreview');
+                    $resultListItems = $('#'+this.settings.id+'_resultList li');
+                    
+                    $resultListItems.removeClass('active');
+                    $resultListItems.find('a').removeClass('active');
+                    
+    				var current = 0;
+    				$resultListItems.each(function() {
+        				if(index == current) {
+            				$(this).addClass('active');
+            				$(this).find('a').addClass('active');
+            				
+            				var selected = results[current];
+            				$resultPreview.html(selected.preview);
+        				}
+        				current++;
+    				});
 				}
 		});
 

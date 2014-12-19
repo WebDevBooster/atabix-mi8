@@ -151,6 +151,12 @@
         }
         .rightColumn,
         .leftColumn {
+          .ul {
+              max-height: rem-calc(300);
+              overflow-y: scroll;
+          }
+            
+            
           .menu {
             li {
               display: block;
