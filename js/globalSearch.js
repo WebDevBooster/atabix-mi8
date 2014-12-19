@@ -69,7 +69,13 @@
     				
     				var object = $(this).data('element');
     				
+    				console.log(e.which);
                     switch(e.which) {
+                        case 13:
+                            object.clickResult();
+                            return;
+                        break;
+                        
                         case 38:
                             if(object.settings.lastSearchQuery.length>0) object.resultUp();
                             return;
@@ -131,16 +137,24 @@
 				},
 				
 				resultUp: function() {
-    				var newIndex = Math.max(0, this.settings.currentIndex-1)
+    				var newIndex = Math.max(0, this.settings.currentIndex-1);
     				this.settings.currentIndex = newIndex;
     				this.activateResult();
 				},
 				
 				resultDown: function() {
-    				var newIndex = Math.min(this.settings.resultCount-1, this.settings.currentIndex+1)
+    				var newIndex = Math.min(this.settings.resultCount-1, this.settings.currentIndex+1);
     				this.settings.currentIndex = newIndex;
     				this.activateResult();
 				},
+				
+				clickResult: function() {
+    				var current = this.settings.results[this.settings.currentIndex];
+    				if(current) {
+                        window.location = current.url;        				
+    				} 
+				},
+				
 				
 				activateResult: function() {
     				
