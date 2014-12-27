@@ -30,4 +30,9 @@ $(function() {
         window.location=$(this).find("a").attr("href");
         return false;
     });        
+    
+    $(".URLifySingle").click(function(){
+        window.location=$(this).find("a").attr("href");
+        return false;
+    });        
 });
