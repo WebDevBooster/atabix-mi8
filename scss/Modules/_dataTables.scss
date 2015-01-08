@@ -1,0 +1,13 @@
+.dataTables_info {
+    padding: rem-calc(18) rem-calc(30);
+    line-height: rem-calc(34);
+}
+.paginate_button {
+    padding: rem-calc(17) rem-calc(10);
+    font-size: rem-calc(14);
+    line-height: rem-calc(34);
+    
+    &:hover {
+        background-color: $section-border-color;
+    }
+}

@@ -268,3 +268,29 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 input:-moz-placeholder, textarea:-moz-placeholder {
   color: darken($section-title-color, 10%);
 }
+
+.avatar {
+    overflow: hidden;
+    padding: rem-calc(0);
+    width: rem-calc(50);
+    height: rem-calc(50);
+    border-radius: 100%;
+    border: 2px solid $section-border-color;
+    background-color: $white;
+    transition: 200ms all ease;
+    float: left;
+    
+    &.small {
+        width: rem-calc(30);
+        height: rem-calc(30);
+    }
+    
+    img {
+        height: 100%;
+        border-radius: 100%;
+        filter: gray(1);
+        &:hover {
+            filter: none;
+        }
+    }
+}

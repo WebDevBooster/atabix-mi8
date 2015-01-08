@@ -1,0 +1,46 @@
+
+
+.assignmentBox {
+    
+    border-bottom: 1px solid $section-border-color;
+    
+    &:hover {
+        background: $white-smoke;
+        cursor: pointer;
+    }
+    
+    .employee {
+        height: rem-calc(100);
+        width: rem-calc(100);
+        float: left;
+        padding: rem-calc(20);
+    }
+    
+    .assignmentBoxContent {
+        height: rem-calc(100);
+        padding: rem-calc(20);
+        
+        p, a {
+            margin: rem-calc(0);
+            padding: rem-calc(0);
+            
+            &.customer {
+                font-weight: bold;
+            }
+            
+            &.project {
+            }
+            
+            &.comment {
+                font-style: italic;
+                color: #999999;
+            }
+        }
+    }
+    
+    .checkbox {
+        height: rem-calc(100);
+        float: right;
+        padding: rem-calc(20);
+    }
+}

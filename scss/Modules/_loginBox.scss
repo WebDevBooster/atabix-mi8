@@ -1,0 +1,63 @@
+.loginBox {
+	background: white;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	padding: rem-calc(45px);
+	-webkit-box-shadow: 0 0 30px 1px rgba(50,50,50,0.2);
+	box-shadow: 0 0 30px 1px rgba(50,50,50,0.2);
+	margin:rem-calc(20px 0 0 0);
+    @media #{$medium-up} {
+		margin:rem-calc(150px 0 0 0);
+	}
+	.image {
+		-webkit-border-radius: 100%;
+		border-radius: 100%;
+		overflow: hidden;
+		width: rem-calc(100px);
+		height: rem-calc(100px);
+		margin:0 auto 30px auto;
+		border:3px solid #ced6d8;
+	}
+	h3 {
+		text-align: center;
+		margin: rem-calc(0 0 10px 0);
+	}
+	input[type=text],
+	input[type=password] {
+		line-height: rem-calc(45px);
+		height: rem-calc(45px);
+		color: #dbe4ec;
+		border: 1px solid #dbe4ec;
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+		margin:rem-calc(0 0 10px 0);
+		display: block;
+		&:focus {
+			background: white;
+			border:1px solid #526880;
+			color: #526880;
+		}
+	}
+	input[type=submit] {
+		line-height: rem-calc(45px);
+		height: rem-calc(45px);
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+		display: block;
+		width: 100%;
+		padding:0;
+		outline: none;
+	}
+	.forgot {
+		text-align: right;
+		font-size: rem-calc(12px);
+		display: block;
+		font-style: italic;
+		color: #dbe4ec;
+		cursor: pointer;
+		margin:rem-calc(0 0 45px 0);
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

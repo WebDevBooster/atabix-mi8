@@ -1,0 +1,365 @@
+// ----------------------------------------------------------------- //
+// List with todolists
+// ----------------------------------------------------------------- //
+.todoLists {
+     .columnLabels {
+        .defaultColumn {
+            float: left;
+            padding: rem-calc(4) rem-calc(20);
+            margin: rem-calc(0) rem-calc(0);
+            height: rem-calc(30);
+            color: $section-border-color;
+        }
+        
+        .checkbox {
+            @extend .defaultColumn;
+            width: rem-calc(40);
+        }
+        .listTitle {
+            @extend .defaultColumn;
+            width: rem-calc(380);
+        }
+        .totalTasks {
+            @extend .defaultColumn;
+            width: rem-calc(80);
+            text-align: center;
+        }
+        .openTasks {
+            @extend .defaultColumn;
+            width: rem-calc(80);
+            text-align: center;
+        }
+        .progressBar {
+            @extend .defaultColumn;
+            width: rem-calc(160);
+        }
+        .actions {
+            @extend .defaultColumn;
+            width: rem-calc(120);
+        }
+        .delcol {
+            @extend .defaultColumn;
+            width: rem-calc(80);
+        }
+    }
+
+    ul {
+        border-radius: $global-radius;
+        border-bottom-left-radius: rem-calc(0);
+        border-bottom-right-radius: rem-calc(0);
+        border: 1px solid $section-border-color;
+        margin: rem-calc(0);
+        margin-bottom: rem-calc(0);
+        clear: both;
+        
+        li {
+            list-style-type: none;
+            border-bottom: 1px solid $section-border-color;
+            padding: rem-calc(0) rem-calc(0);
+            background: $sidepanel-bg-color;
+            height: rem-calc(40);
+            overflow: hidden;
+            cursor: pointer;
+            
+            &:last-child {
+                border-bottom: 1px none $section-border-color;
+            }
+            &:hover {
+                background: $section-border-color;
+            }
+            
+            
+            .defaultColumn {
+                float: left;
+                padding: rem-calc(4) rem-calc(20);
+                margin: rem-calc(0) rem-calc(0);
+                height: rem-calc(40);
+                
+                input, select {
+                    margin: rem-calc(0);
+                    height: rem-calc(30);
+                }
+            }
+            
+            .checkbox {
+                @extend .defaultColumn;
+                width: rem-calc(40);
+            }
+            .listTitle {
+                @extend .defaultColumn;
+                width: rem-calc(380);
+                input {
+                    border: 1px $sidepanel-bg-color solid;
+                    background-color: $sidepanel-bg-color;
+                }
+            }
+            .totalTasks {
+                @extend .defaultColumn;
+                width: rem-calc(80);
+                text-align: center;
+            }
+            .openTasks {
+                @extend .defaultColumn;
+                width: rem-calc(80);
+                text-align: center;
+            }
+            .progressBar {
+                @extend .defaultColumn;
+                width: rem-calc(160);
+            }
+            .actions {
+                @extend .defaultColumn;
+                width: rem-calc(120);
+                float: right;
+                
+                a {
+                    display: none;
+                }
+            }
+            .delcol {
+                @extend .defaultColumn;
+                width: rem-calc(80);
+                float: right;
+                
+                a {
+                    display: none;
+                }
+            }
+            
+            &:hover {
+                .listTitle {
+                    input {
+                        border: 1px #cccccc solid;
+                        background-color: $white;
+                    }
+                }
+                .actions {
+                    a {
+                        display: inline-block;
+                    }
+                }
+                .delcol {
+                    a {
+                        display: inline-block;
+                    }
+                }
+            }
+        
+            &.complete {
+                .listTitle {
+                    input {
+                        text-decoration: line-through;
+                        color: lighten($body-font-color, 30%);
+                    }
+                }
+            }
+        }
+        
+        .ui-sortable-placeholder {
+            background-color: $section-border-color;
+        }
+    }
+    
+    .addButton {
+        width: 100%;
+        margin-bottom: $column-gutter;
+        border-bottom-left-radius: $global-radius;
+        border-bottom-right-radius: $global-radius;
+        background-color: $white;
+        border: 2px dashed $section-border-color;
+        border-top: 0px none $section-border-color;
+        color: #849db8;
+        height: rem-calc(40);
+        padding: rem-calc(0);
+    
+        &:hover {
+            background-color: $section-border-color;
+        }
+    }
+
+}
+
+
+
+
+// ----------------------------------------------------------------- //
+// List with todo's
+// ----------------------------------------------------------------- //
+
+.todoList {
+    .listLabel {
+        color: $body-font-color;
+        margin: 0;
+        padding-top: rem-calc(8);
+        font-size: rem-calc(22);
+    }
+    
+    .columnLabels {
+        .taskcol {
+            float: left;
+            padding: rem-calc(4) rem-calc(20);
+            margin: rem-calc(0) rem-calc(0);
+            height: rem-calc(30);
+            color: $section-border-color;
+        }
+        
+        .checkbox {
+            @extend .taskcol;
+            width: rem-calc(40);
+        }
+        .tasktitle {
+            @extend .taskcol;
+            width: rem-calc(400);
+        }
+        .employees {
+            @extend .taskcol;
+            width: rem-calc(120);
+        }
+        .taskstatus {
+            @extend .taskcol;
+            width: rem-calc(120);
+            text-align: center;
+        }
+        .delcol {
+            @extend .taskcol;
+            width: rem-calc(60);
+        }
+        
+    }
+    
+    ul {
+        border-radius: $global-radius;
+        border-bottom-left-radius: rem-calc(0);
+        border-bottom-right-radius: rem-calc(0);
+        border: 1px solid $section-border-color;
+        margin: rem-calc(0);
+        margin-bottom: rem-calc(0);
+        clear: both;
+        
+        li {
+            list-style-type: none;
+            border-bottom: 1px solid $section-border-color;
+            padding: rem-calc(0) rem-calc(0);
+            background: $sidepanel-bg-color;
+            height: rem-calc(40);
+            overflow: hidden;
+            
+            &:last-child {
+                border-bottom: 1px none $section-border-color;
+            }
+            
+            
+            .taskcol {
+                float: left;
+                padding: rem-calc(4) rem-calc(20);
+                margin: rem-calc(0) rem-calc(0);
+                height: rem-calc(40);
+                
+                input, select {
+                    margin: rem-calc(0);
+                    height: rem-calc(30);
+                }
+            }
+            
+            .checkbox {
+                @extend .taskcol;
+                width: rem-calc(40);
+                input {
+                    margin-top: rem-calc(3);
+                }
+            }
+            .tasktitle {
+                @extend .taskcol;
+                width: rem-calc(400);
+                input {
+                    border: 1px $sidepanel-bg-color solid;
+                    background-color: $sidepanel-bg-color;
+                }
+            }
+            .employees {
+                @extend .taskcol;
+                padding: rem-calc(4) rem-calc(10);
+                cursor: pointer;
+                width: rem-calc(120);
+                
+                &:hover {
+                    background: $section-border-color;
+                }
+            }
+            .taskstatus {
+                @extend .taskcol;
+                padding: rem-calc(6) rem-calc(10);
+                cursor: pointer;
+                width: rem-calc(120);
+                text-align: center;
+                
+                &:hover {
+                    background: $section-border-color;
+                }
+            }
+            .estimate {
+                @extend .taskcol;
+                text-align: right;
+                width: rem-calc(120);
+                padding: rem-calc(4) rem-calc(10);
+                input {
+                    text-align: right;
+                }
+            }
+            .delcol {
+                @extend .taskcol;
+                float: right;
+                width: rem-calc(60);
+                padding: rem-calc(4) rem-calc(10);
+                
+                a {
+                    display: none;
+                }
+            }
+    
+            &:hover {
+                .tasktitle {
+                    input {
+                        border: 1px #cccccc solid;
+                        background-color: $white;
+                    }
+                }
+                .delcol {
+                    a {
+                        display: inline-block;
+                    }
+                }
+            }
+        
+            &.complete {
+                .tasktitle {
+                    input {
+                        text-decoration: line-through;
+                        color: lighten($body-font-color, 30%);
+                    }
+                }
+            }
+        }
+        
+        .ui-sortable-placeholder {
+            background-color: $section-border-color;
+        }
+    }
+    
+    .addButton {
+        width: 100%;
+        margin-bottom: $column-gutter;
+        border-bottom-left-radius: $global-radius;
+        border-bottom-right-radius: $global-radius;
+        background-color: $white;
+        border: 2px dashed $section-border-color;
+        border-top: 0px none $section-border-color;
+        color: #849db8;
+        height: rem-calc(40);
+        padding: rem-calc(0);
+    
+        &:hover {
+            background-color: $section-border-color;
+        }
+    }
+}
