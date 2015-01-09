@@ -10,7 +10,7 @@
   .title {
     border-bottom: 1px solid $section-border-color;
     padding: rem-calc(10) rem-calc(20);
-    background: #eef2f6;
+    background: $section-title-color;
     height: rem-calc(56);
     overflow: hidden;
 

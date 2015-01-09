@@ -1,0 +1,161 @@
+input{
+    &.datepicker {
+        width: rem-calc(100);
+    }
+}
+
+
+.ui-datepicker {
+    border: 1px solid $section-border-color;
+    border-radius: $global-radius;
+    background: $sidepanel-bg-color;
+    box-shadow: 0px 5px 10px darken($white, 20%);
+    
+    .ui-datepicker-header {
+        background-color: $section-title-color;
+        .ui-datepicker-title {
+            text-align: center;
+            padding: rem-calc(10) rem-calc(10);
+            .ui-datepicker-month, .ui-datepicker-year {
+					padding:rem-calc(0 25px 0 5px);
+					height: rem-calc(32px);
+					background-color: white;
+					border-radius:3px;
+					-webkit-border-radius:3px;
+					color: rgba(82,104,128,0.5);
+					margin: rem-calc(0px 5px);
+					width: auto;
+					&:focus {
+						color: #526880
+					}
+            }
+        }
+        
+        .ui-datepicker-prev {
+            @extend .fi-arrow-left;
+            padding: rem-calc(10) rem-calc(10);
+            margin: rem-calc(10) rem-calc(10);
+            float: left;
+
+		    @media #{$medium-up} {
+			 	width: auto;   
+			}
+			text-align: center;
+			line-height: rem-calc(30px);
+			border:1px solid #dbe4ec;
+			list-style: none;
+			padding:rem-calc(0 10px);
+			background: white;
+			cursor: pointer;
+			color: rgba(82,104,128,0.5);
+			font-size: rem-calc(14px);
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+			&:hover {
+				color:#526880; 
+			}
+
+            .ui-icon {
+                display: none;
+            }
+        }
+
+        .ui-datepicker-next {
+            @extend .fi-arrow-right;
+            padding: rem-calc(10) rem-calc(10);
+            margin: rem-calc(10) rem-calc(10);
+            float: right;
+
+		    @media #{$medium-up} {
+			 	width: auto;   
+			}
+			text-align: center;
+			line-height: rem-calc(30px);
+			border:1px solid #dbe4ec;
+			list-style: none;
+			padding:rem-calc(0 10px);
+			background: white;
+			cursor: pointer;
+			color: rgba(82,104,128,0.5);
+			font-size: rem-calc(14px);
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+			&:hover {
+				color:#526880; 
+			}
+
+            .ui-icon {
+                display: none;
+            }
+        }
+    }
+    
+    .ui-datepicker-calendar {
+        
+        td, th {
+            padding: rem-calc(6) rem-calc(10);
+        }
+        
+        .ui-state-default {
+            padding: rem-calc(6);
+            text-align: center;
+            display: block;
+        }
+        .ui-state-active {
+            @extend .radius;
+            background-color: $secondary-color;
+            color: $white;
+            border: 1px solid $section-border-color;
+        }
+    }
+    
+    .ui-datepicker-buttonpane {
+        clear: both;
+        
+        .ui-datepicker-current {
+            @extend .radius;
+            float: left;
+            margin: rem-calc(10) rem-calc(10);
+		    @media #{$medium-up} {
+			 	width: auto;   
+			}
+			text-align: center;
+			line-height: rem-calc(30px);
+			border:1px solid #dbe4ec;
+			list-style: none;
+			padding:rem-calc(0 10px);
+			background: white;
+			cursor: pointer;
+			color: rgba(82,104,128,0.5);
+			font-size: rem-calc(14px);
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+			&:hover {
+				color:#526880; 
+			}
+        }
+
+        .ui-datepicker-close {
+            @extend .radius;
+            float: right;
+            margin: rem-calc(10) rem-calc(10);
+		    @media #{$medium-up} {
+			 	width: auto;   
+			}
+			text-align: center;
+			line-height: rem-calc(30px);
+			border:1px solid #dbe4ec;
+			list-style: none;
+			padding:rem-calc(0 10px);
+			background: white;
+			cursor: pointer;
+			color: rgba(82,104,128,0.5);
+			font-size: rem-calc(14px);
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+			&:hover {
+				color:#526880; 
+			}
+        }
+    }
+}
