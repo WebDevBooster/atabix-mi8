@@ -50,8 +50,9 @@
 				    border-bottom: 1px solid $section-border-color;
 				    padding:rem-calc(10px 10px 10px 30px);
 				    position: relative;
-				    &:last-of-kind {
+				    &:last-of-type {
 					    border-bottom: none;
+                        margin-bottom: rem-calc(40px);
 				    }
 				    p {
 					    margin:0;
@@ -324,6 +325,12 @@
 					margin:rem-calc(0 0 20px 0);
 				}
 			} // message 
+
+			.plain {
+				padding:rem-calc(0px 0px 20px 0px);
+				position: relative;
+				height: 100%;
+            }
 		} // email
 	} // mid
 	
