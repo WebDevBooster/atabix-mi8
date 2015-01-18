@@ -101,6 +101,14 @@ input{
             text-align: center;
             display: block;
         }
+        .ui-datepicker-today {
+            @extend .radius;
+            background-color: lighten($secondary-color, 20%);
+            border: 1px dashed $section-border-color;
+            a {
+                color: $white;
+            }
+        }
         .ui-state-active {
             @extend .radius;
             background-color: $secondary-color;
