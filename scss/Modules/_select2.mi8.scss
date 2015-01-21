@@ -1,0 +1,82 @@
+.select2-container {
+	width: 100%;
+	height: rem-calc(37px);
+	border-radius: 0px;
+	-webkit-border-radius: 0px;
+	margin:rem-calc(0 0 16px 0);
+	.select2-choice {
+		height: rem-calc(37px);
+		line-height: rem-calc(37px);
+		border-radius: 0px;
+		-webkit-border-radius: 0px;
+		background-color: #FAFAFA;
+		border: 1px solid #cccccc;
+		background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+);
+		background-position: 100% center;
+		background-repeat: no-repeat;
+		color: rgba(0, 0, 0, 0.75)!important;
+		font-size: 0.875rem;
+		font-family: "Avenir Roman", "Helvetica", Helvetica, Arial, sans-serif;  
+		box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;
+	}
+	.select2-arrow {
+		display: none!important;
+	}
+	input {
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		&:focus {
+			box-shadow: none;
+		}
+	}
+}
+.select2-search input {
+	height: rem-calc(37px)!important;
+	background: white!important;
+	font-size: rem-calc(14px);
+	padding:rem-calc(0 8px);
+	line-height: rem-calc(37px);
+	color: rgba(0, 0, 0, 0.75)!important;
+	border: 1px solid #cccccc;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	&:focus {
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+}
+.select2-drop {
+	color: rgba(0, 0, 0, 0.75);
+	border: 1px solid #cccccc;
+	border-top: 0;
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.select2-drop-active {
+	border: 1px solid #cccccc;
+	border-top: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.select2-drop.select2-drop-above,
+.select2-container-active .select2-choice,
+.select2-container-active .select2-choices,
+.select2-dropdown-open .select2-choice {
+
+
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.select2-results {
+	li {
+		font-size: rem-calc(14px);
+		line-height: rem-calc(21px);
+		padding: rem-calc(8px);
+		color: #b2bbc5;
+		&:hover {
+			background: #526880;
+			color: white;
+		}
+	}
+}
