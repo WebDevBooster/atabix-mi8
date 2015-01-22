@@ -58,6 +58,13 @@ button {
   @extend .text-left;
 }
 
+.ml {
+    margin-left: $column-gutter/2 !important;
+}
+.mr {
+    margin-right: $column-gutter/2 !important;
+}
+
 // Priority message colors
 .priority1 {
   color: $alert-color;
@@ -135,6 +142,11 @@ table {
         &:hover {
           background: none!important;
         }
+        
+        input, select, textarea {
+            margin: 0 !important;
+        }
+        
       }
     }
   }
@@ -182,6 +194,10 @@ table {
           font-weight: 300;
           display: block;
         }
+        
+        input, select, textarea {
+            margin: 0 !important;
+        }
       }
 
       &:hover {
@@ -214,6 +230,10 @@ table {
         font-weight: 700;
         font-size: rem-calc(16);
         font-family: $primary-nav-font;
+
+        input, select, textarea {
+            margin: 0 !important;
+        }
       }
     }
   }
