@@ -44,6 +44,9 @@
             
             composeBoxID: 'emailboxPluginComposeTextAreaID',
             messageIDs: [],
+            currentPage: 0,
+            loadingPages: false,
+            clearResultsOnSearch: false,
             activeMessage: 0,
             iframeSandbox: true,
             contentTemplate: 'email',
@@ -94,7 +97,14 @@
     				this.searchInput = $('<input type="search">').data("plugin", this).attr('placeholder', 'Zoeken...').appendTo($searchHolder).keyup(this.searchboxChange);
     				$('<i>').addClass('fi-magnifying-glass').appendTo($searchHolder);
     				
-    				this.listContainer = $('<ul>').appendTo(this.listPane);
+    				this.listContainer = $('<ul>').data("plugin", this).appendTo(this.listPane);
+    				
+                    this.listContainer.scroll(function() {
+                        var $plugin = $(this).data("plugin");
+                        if($(this).scrollTop() > this.scrollHeight - $($plugin.element).parent().height() - 20) {
+                            $plugin.nextPage();
+                        }
+                    }); 
 				},
 				
 				contructPreviewPane: function() {
@@ -264,28 +274,41 @@
     				var tmp = this;
     				
     				var params = $.extend({}, this.settings.params,  {
-                        "query": this.searchInput.val()
+                         "query": this.searchInput.val()
+                        ,"page": this.settings.currentPage
+                        ,"newsearch": this.settings.clearResultsOnSearch
     				});
     				
     				$.get(this.settings.urlPrefix+"/getlist", params, function(json) {
     				        if(json.status) {
-                                tmp.clearList();
-            				    tmp.settings.messageIDs = [];
+                                if(tmp.settings.clearResultsOnSearch) {
+                                    tmp.clearList();
+                				    tmp.settings.currentPage = 0;
+                				    tmp.settings.messageIDs = [];
+                                }
             				    if(json.messages.length>0) {
             				        for(var i in json.messages) {
                 				        tmp.addListItem(json.messages[i]);
                 				        tmp.settings.messageIDs.push( json.messages[i].id );
             				        }
             				    } else {
-                				    tmp.addListItem({
-                    				    'id': 0, 'status': 'open', 'from': 'geen berichten', 'to': '', 'date': '', 'subject': '', 'body': ''
-                				    });
+                                    if(tmp.settings.clearResultsOnSearch) {
+                    				    tmp.addListItem({
+                        				    'id': 0, 'status': 'open', 'from': 'geen berichten', 'to': '', 'date': '', 'subject': '', 'body': ''
+                    				    });
+                    				}
             				    }
     				        } else {
     				            swal(json.title, json.msg, 'error');
     				        }
     				    }, "json"
     				);
+				},
+				
+				nextPage: function() {
+    				this.settings.currentPage = this.settings.currentPage + 1;
+    				this.settings.clearResultsOnSearch = false;
+                    this.search();
 				},
 				
 				addPreview: function(params) {
