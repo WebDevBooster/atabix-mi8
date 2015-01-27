@@ -270,7 +270,7 @@
     				}, plugin.settings.searchDelay);
 				},
 				
-				search: function() {
+				doSearch: function() {
     				var tmp = this;
     				
     				var params = $.extend({}, this.settings.params,  {
@@ -305,10 +305,16 @@
     				);
 				},
 				
+				search: function() {
+    				this.settings.currentPage = 0;
+    				this.settings.clearResultsOnSearch = true;
+                    this.doSearch();
+				},
+				
 				nextPage: function() {
     				this.settings.currentPage = this.settings.currentPage + 1;
     				this.settings.clearResultsOnSearch = false;
-                    this.search();
+                    this.doSearch();
 				},
 				
 				addPreview: function(params) {
