@@ -1,0 +1,25 @@
+table.plainTable {
+	&.borderRight {
+		border-right: 1px solid #ecf1f5;
+	}
+	&.borderLeft {
+		border-left: 1px solid #ecf1f5;
+	}
+	&.borderBottom {
+		border-bottom: 1px solid #ecf1f5;
+	}
+	&.borderTop {
+		border-top: 1px solid #ecf1f5;
+	}
+	tr {
+		border: none;
+		background: none;
+		&:nth-of-type(even), &:hover {
+			background: none;
+		}
+		td {
+			background: none;
+			border: none;
+		}
+	}
+}
