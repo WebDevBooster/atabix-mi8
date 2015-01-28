@@ -123,7 +123,7 @@
     				}
     				
     				if(this.settings.showLabelButton) {
-        				this.labelSelect = $('<select>').data("plugin", this).appendTo($topBarRight);
+        				this.labelSelect = $('<select>').addClass('msgtools').data("plugin", this).appendTo($topBarRight).hide();
         				for(var i in this.settings.labels) {
             				$('<option>').attr('value', this.settings.labels[i].id).html(this.settings.labels[i].label).appendTo(this.labelSelect);
         				}
@@ -154,7 +154,7 @@
     				}
     				
     				if(this.settings.showAnswerButton) {
-                        var $btn1 = $('<li>').html(this.settings.answerButtonText).data("plugin", this).appendTo($topBarOptions);
+                        var $btn1 = $('<li>').html(this.settings.answerButtonText).addClass('msgtools').data("plugin", this).appendTo($topBarOptions).hide();
         				if(isFirst) $btn1.addClass('first');
         				if(!this.settings.showArchiveButton && !this.settings.showDeleteButton) $btn1.addClass('last');
         				isFirst = false;
@@ -165,7 +165,7 @@
                         
     				}
     				if(this.settings.showDeleteButton) {
-        				var $btn2 = $('<li>').html(this.settings.deleteButtonText).data("plugin", this).appendTo($topBarOptions);
+        				var $btn2 = $('<li>').html(this.settings.deleteButtonText).addClass('msgtools').data("plugin", this).appendTo($topBarOptions).hide();
         				if(isFirst) $btn2.addClass('first');
         				if(!this.settings.showArchiveButton) $btn2.addClass('last');
         				isFirst = false;
@@ -175,7 +175,7 @@
                         }
     				}
     				if(this.settings.showArchiveButton) {
-        				var $btn3 = $('<li>').html(this.settings.archiveButtonText).addClass('last').data("plugin", this).appendTo($topBarOptions);
+        				var $btn3 = $('<li>').html(this.settings.archiveButtonText).addClass('msgtools').addClass('last').data("plugin", this).appendTo($topBarOptions).hide();
         				if(isFirst) $btn3.addClass('first');
         				isFirst = false;
         				
@@ -326,6 +326,11 @@
         				if(params.label.length>0) {
             				$('<span>').addClass('label').addClass('right').html(params.label).appendTo($title);
         				}
+        				if(parseInt(params.labelid)>0) {
+                            $(this.labelSelect).val(params.labelid);
+        				} else {
+                            $(this.labelSelect).val(0);
+        				}
         				
         				$info = $('<p>').addClass('info').appendTo(this.contentContainer);
         				$info.append('van: <span>'+params.from+'</span>');
@@ -339,6 +344,8 @@
         				}
         				
                         $('<div>').addClass('divider').appendTo(this.contentContainer);
+                        
+                        $('.msgtools', this.previewPane).show();
     				} 
 
                     
@@ -427,11 +434,13 @@
 				defaultSendMessage: function() {
     				var plugin = $(this).data("plugin");
     				
-                    $.post(plugin.settings.urlPrefix+"/send-message", {
+    				var params = $.extend({}, plugin.settings.params,  {
                          'subject': $('input.subject', plugin.element).val()
                         ,'to': $('input.to', plugin.element).val()
                         ,'body': plugin.ckeditor.getData()
-                    }, function(json) {
+    				});
+    				
+                    $.post(plugin.settings.urlPrefix+"/send-message", params, function(json) {
                         if(json.status==1) {
                             swal(json.title, json.msg, 'success');
                             plugin.search();
