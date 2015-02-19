@@ -29,10 +29,20 @@
 				
 				postUpdate: function() {
     				var plugin = $(this).data('plugin');
+                    var value;
+                    if ($(this).attr("type") == "checkbox") {
+                        if ($(this).prop("checked")) {
+                            value = "on";
+                        } else {
+                            value = "";
+                        }
+                    } else {
+                        value = $(plugin.element).val();
+                    }
                     $.post(plugin.settings.url, { 
                         "id": plugin.settings.fieldID,
                         "name": $(plugin.element).attr("name"),
-            			"value": $(plugin.element).val()
+            			"value": value
             		}, function(json) {
             			if(json.status!=1) {
                             swal(json.title, json.msg, 'error');
