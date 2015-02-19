@@ -29,7 +29,6 @@
 				
 				postUpdate: function() {
     				var plugin = $(this).data('plugin');
-    				console.log(plugin.settings.url);
                     $.post(plugin.settings.url, { 
                         "id": plugin.settings.fieldID,
                         "name": $(plugin.element).attr("name"),
