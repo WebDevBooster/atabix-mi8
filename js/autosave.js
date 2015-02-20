@@ -39,15 +39,23 @@
                     } else {
                         value = $(plugin.element).val();
                     }
-                    $.post(plugin.settings.url, { 
-                        "id": plugin.settings.fieldID,
-                        "name": $(plugin.element).attr("name"),
-            			"value": value
-            		}, function(json) {
-            			if(json.status!=1) {
-                            swal(json.title, json.msg, 'error');
-            			}
-            		},"json");
+
+                    $.ajax(plugin.settings.url, { 
+                        dataType: "json",
+                        data: {
+                            "id": plugin.settings.fieldID,
+                            "name": $(plugin.element).attr("name"),
+                			"value": value
+                        },
+                        success: function (json) {
+                			if(json.status!=1) {
+                                swal(json.title, json.msg, 'error');
+                			}
+                        }
+            		})
+            		.fail(function() {
+                        swal("Failed to autosave", "Make sure that the url exists and processes the data correctly.", "error");
+                    });
 				}
 				
 		});
