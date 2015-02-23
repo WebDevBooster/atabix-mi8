@@ -325,7 +325,7 @@
         				$title = $('<p>').addClass('title').html(params.subject).appendTo(this.contentContainer);
         				
         				if(params.label.length>0) {
-            				$('<span>').addClass('label').addClass('right').html(params.label).appendTo($title);
+            				$('<span>').addClass('label').addClass('round').addClass('right').html(params.label).appendTo($title);
         				}
         				if(parseInt(params.labelid)>0) {
                             $(this.labelSelect).val(params.labelid);
