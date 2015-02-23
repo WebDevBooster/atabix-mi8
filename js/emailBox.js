@@ -140,6 +140,7 @@
             				var tmpCustomBtn = this.settings.customButtons[i];
             				
                             var $customBtn = $('<li>').html(tmpCustomBtn.label).data("plugin", this).appendTo($topBarOptions);
+                            if(tmpCustomBtn.customClass) $customBtn.addClass(tmpCustomBtn.customClass);
             				if(isFirst) $customBtn.addClass('first');
             				if(
             				    !this.settings.showArchiveButton && 

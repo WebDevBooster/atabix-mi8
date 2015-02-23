@@ -234,6 +234,14 @@
 							border-radius:0 3px 3px 0;
 							-webkit-border-radius:0 3px 3px 0;
 						}
+						&.primary {
+    						background-color: $primary-color;
+    						color: $white;
+						}
+						&.secondary {
+    						background-color: $secondary-color;
+    						color: $white;
+						}
 						&:hover {
 							color:#526880; 
 						}
