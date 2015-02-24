@@ -22,9 +22,13 @@
 				init: function () {
     				var e = this.element;
     				
-    				this.settings.url = $(e).attr("autosave-url");
-    				this.settings.fieldID = $(e).attr("autosave-id");
-    				$(e).change(this.postUpdate).data('plugin', this);
+                    var url = $(e).attr("autosave-url");
+                    var id = $(e).attr("autosave-id");
+                    if (typeof id !== "undefined" && typeof url !== "undefined") {
+        				this.settings.url = url;
+        				this.settings.fieldID = id;
+        				$(e).change(this.postUpdate).data('plugin', this);
+                    }
 				},
 				
 				postUpdate: function() {
