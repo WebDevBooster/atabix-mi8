@@ -43,6 +43,7 @@
             correctionTopBody: 20,
             
             composeBoxID: 'emailboxPluginComposeTextAreaID',
+            defaultComposeText: '',
             messageIDs: [],
             currentPage: 0,
             loadingPages: false,
@@ -241,6 +242,12 @@
     				this.ckeditor = CKEDITOR.replace( this.settings.composeBoxID );
     				
                     $('<div>').addClass('divider').appendTo($composeContainer);
+                    
+                    var editorinstance = this.settings.composeBoxID;
+                    var signature = this.settings.defaultComposeText;
+                    setTimeout(function() {
+                        CKEDITOR.instances[editorinstance].setData(signature);
+                    }, 2000);
 				},
 				
 				addListItem: function(params) {
