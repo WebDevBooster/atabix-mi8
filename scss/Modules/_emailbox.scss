@@ -94,7 +94,7 @@
 						    content: "";
 						    width: rem-calc(8px);
 						    height: rem-calc(8px);
-						    background: #ff0078;
+						    background: $primary-color;
 						    display: block;
 						    position: absolute;
 						    left:11px;
@@ -126,7 +126,7 @@
 					padding:rem-calc(4px 20px 3px 20px);
 				}
 				.new {
-					background: #ff0078;
+					background: $primary-color;
 					line-height: rem-calc(32px);
 					height: rem-calc(32px);
 					padding:rem-calc(0 10px);

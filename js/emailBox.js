@@ -12,6 +12,7 @@
             toPlaceholderText: 'Ontvanger(s) van het bericht...',
             subjectPlaceholderText: 'Onderwerp...',
             bodyPlaceholderText: 'Jouw bericht...',
+            toValue: '',
             
             addButtonText: 'Nieuw bericht',
             sendButtonText: 'Bericht versturen',
@@ -44,6 +45,7 @@
             
             composeBoxID: 'emailboxPluginComposeTextAreaID',
             defaultComposeText: '',
+            newEmailButtonCustomClass: '',
             messageIDs: [],
             currentPage: 0,
             loadingPages: false,
@@ -51,6 +53,7 @@
             activeMessage: 0,
             iframeSandbox: true,
             contentTemplate: 'email',
+            emailMode: true,
             
             listPane: {},
             previewPane: {},
@@ -116,7 +119,7 @@
     				$topBarOptions = $('<ul>').addClass('options').appendTo($topBarRight);
                     
     				if(this.settings.showNewEmailButton) {
-        				$addBtn = $('<button>').addClass('new').html(this.settings.addButtonText).data("plugin", this).appendTo($topBar);
+        				$addBtn = $('<button>').addClass('new').addClass(this.settings.newEmailButtonCustomClass).html(this.settings.addButtonText).data("plugin", this).appendTo($topBar);
         				
                         if($addBtn.click(this.settings.composeItem) !== false) {
                             $addBtn.click(this.defaultComposeMessage);
@@ -209,7 +212,7 @@
     				$topBarOptions = $('<ul>').addClass('options').appendTo($topBarRight);
                     
     				if(this.settings.showNewEmailButton) {
-        				$sendBtn = $('<button>').addClass('new').html(this.settings.sendButtonText).data("plugin", this).appendTo($topBar);
+        				$sendBtn = $('<button>').addClass('new').addClass(this.settings.newEmailButtonCustomClass).html(this.settings.sendButtonText).data("plugin", this).appendTo($topBar);
         				
                         if($sendBtn.click(this.settings.sendMessage) !== false) {
                             $sendBtn.click(this.defaultSendMessage);
@@ -230,14 +233,14 @@
     				$image = $('<div>').addClass('image').appendTo($composeContainer).html('<img src="/static/images/default_employee.svg" />');
     				
     				$title = $('<p>').appendTo($composeContainer);
-    				$subject = $('<input type="text" name="to">').addClass('to').attr('placeholder', this.settings.toPlaceholderText).appendTo($title);
+    				$to = $('<input type="text" name="to">').addClass('to').attr('placeholder', this.settings.toPlaceholderText).appendTo($title);
     				
     				$title = $('<p>').addClass('title').appendTo($composeContainer);
     				$subject = $('<input type="text" name="subject">').addClass('subject').attr('placeholder', this.settings.subjectPlaceholderText).appendTo($title);
     				
     				
     				$title = $('<p>').appendTo($composeContainer);
-    				$subject = $('<textarea name="body">').attr('id', this.settings.composeBoxID).addClass('to').attr('placeholder', this.settings.bodyPlaceholderText).height('100%').appendTo($title);
+    				$body = $('<textarea name="body">').attr('id', this.settings.composeBoxID).attr('placeholder', this.settings.bodyPlaceholderText).height('100%').appendTo($title);
     				
     				this.ckeditor = CKEDITOR.replace( this.settings.composeBoxID );
     				
@@ -245,8 +248,10 @@
                     
                     var editorinstance = this.settings.composeBoxID;
                     var signature = this.settings.defaultComposeText;
+                    var defaultEmail = this.settings.toValue;
                     setTimeout(function() {
                         CKEDITOR.instances[editorinstance].setData(signature);
+                        $to.val(defaultEmail);
                     }, 2000);
 				},
 				
@@ -433,10 +438,15 @@
     				this.previewPane.show();
 				},
 				
+				showCompose: function() {
+    				this.previewPane.hide();
+    				this.composePane.show();
+				},
+				
 				defaultComposeMessage: function() {
     				var plugin = $(this).data('plugin');
-    				plugin.previewPane.hide();
-    				plugin.composePane.show();
+    				plugin.enableEmailMode();
+    				plugin.showCompose();
 				},
 				
 				defaultSendMessage: function() {
@@ -446,6 +456,7 @@
                          'subject': $('input.subject', plugin.element).val()
                         ,'to': $('input.to', plugin.element).val()
                         ,'body': plugin.ckeditor.getData()
+                        ,'emailmode': plugin.settings.emailMode
     				});
     				
                     $.post(plugin.settings.urlPrefix+"/send-message", params, function(json) {
@@ -504,6 +515,19 @@
                     }, 'json');
 				},
 				
+				disableEmailMode: function() {
+    				this.settings.emailMode = false;
+    				$('.image', this.composePane).hide();
+    				$('.to', this.composePane).hide();
+    				$('.subject', this.composePane).hide();
+				},
+				
+				enableEmailMode: function() {
+    				this.settings.emailMode = true;
+    				$('.image', this.composePane).show();
+    				$('.to', this.composePane).show();
+    				$('.subject', this.composePane).show();
+				},
 				
 				setParams: function(newParams) {
     				this.settings.params = newParams;
