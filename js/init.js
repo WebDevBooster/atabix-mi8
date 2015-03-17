@@ -1,16 +1,6 @@
 $(document).foundation();
 
 $(function() {
-    $("#st-container").niceScroll({
-        cursorborder:"0",
-        touchbehavior: false,
-        zindex: "999999999999",
-        railpadding: {right: 2},
-        cursorborderradius: "5px",
-        bouncescroll: true,
-        scrollspeed: "60"
-    });
-    
     $('.datepicker').datepicker({
         changeMonth: true,
         changeYear: true,
