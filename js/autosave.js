@@ -46,6 +46,7 @@
 
                     $.ajax(plugin.settings.url, { 
                         dataType: "json",
+                        method: "POST",
                         data: {
                             "id": plugin.settings.fieldID,
                             "name": $(plugin.element).attr("name"),
