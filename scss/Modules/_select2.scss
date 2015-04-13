@@ -8,7 +8,10 @@ Version: 3.5.2 Timestamp: Sat Nov  1 14:43:36 EDT 2014
   zoom: 1;
   *display: inline;
   vertical-align: middle;
-  margin: 0 !important;
+  margin: 0;
+}
+.rightPanal .elementPanel .select2-container {
+	margin:rem-calc(0 0 16px 0);
 }
 
 .select2-container,
