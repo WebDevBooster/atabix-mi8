@@ -14,7 +14,7 @@
       .submenu {
         display: none;
         position: absolute;
-        width: rem-calc(200);
+        width: auto;
         margin:0;
         opacity: 0;
         background: $white;
@@ -25,15 +25,17 @@
 		right:rem-calc(20px);
         li {
           display: block;
-
+          &:hover {
+            background: $white-smoke;
+	        a {
+              color: $body-font-color;
+	        }
+          }
           a {
             display: block;
             padding: rem-calc(4) rem-calc(12);
             color: $secondary-nav-color;
             font-size: rem-calc(14);
-            &:hover {
-              color: $body-font-color;
-            }
           }
         }
       }
