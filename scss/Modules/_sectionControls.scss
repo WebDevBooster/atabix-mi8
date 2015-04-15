@@ -14,17 +14,16 @@
       .submenu {
         display: none;
         position: absolute;
-        width: rem-calc(130);
-        margin: 0 auto;
+        width: rem-calc(200);
+        margin:0;
         opacity: 0;
-        margin-top: -10px;
-        margin-left: -12px;
         background: $white;
         z-index: 12;
         border: 1px solid $section-border-color;
         border-radius: $global-radius;
         transition: 400ms all ease-in-out;
-
+		right:rem-calc(-20px);
+		top:rem-calc(-5px);
         li {
           display: block;
 
