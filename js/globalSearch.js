@@ -69,7 +69,6 @@
     				
     				var object = $(this).data('element');
     				
-    				console.log(e.which);
                     switch(e.which) {
                         case 13:
                             object.clickResult();
