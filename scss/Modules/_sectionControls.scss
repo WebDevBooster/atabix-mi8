@@ -26,6 +26,7 @@
 		right:rem-calc(0px);
         li {
           display: block;
+          white-space: nowrap;
           &:hover {
             background: $white-smoke;
 	        a {
