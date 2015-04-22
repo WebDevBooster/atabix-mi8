@@ -2,6 +2,7 @@
   ul.menu {
 
     li {
+	  position: relative;
       .settings {
         &.fi-wrench {
           &:before {
@@ -22,7 +23,7 @@
         border: 1px solid $section-border-color;
         border-radius: $global-radius;
         transition: 400ms all ease-in-out;
-		right:rem-calc(20px);
+		right:rem-calc(0px);
         li {
           display: block;
           &:hover {
