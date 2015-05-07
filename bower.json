@@ -12,7 +12,7 @@
     "jquery-file-upload": "latest",
     "highcharts-release": "4.*",
     "atabix-sweetalert": "latest",
-    "select2": "2.*",
+    "select2": "3.*",
     "mousetrap": "latest"
   }
 }
