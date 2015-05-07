@@ -15,7 +15,6 @@
     "atabix-sweetalert": "latest",
     "select2": "2.*",
     "mousetrap": "https://github.com/ccampbell/mousetrap.git"
-  },
-  "private": true
+  }
 }
 
