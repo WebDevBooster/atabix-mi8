@@ -1,99 +1,87 @@
 .elementPanel {
-  width:100%;
-  height: auto;
-  overflow: hidden;
-  background: $white;
-  border-radius: $global-radius;
-  border: 1px solid $section-border-color;
-  margin-bottom: $column-gutter;
-
-  .title {
-    border-bottom: 1px solid $section-border-color;
-    padding: rem-calc(10) rem-calc(20);
-    background: $section-title-color;
-    height: rem-calc(56);
-    overflow: hidden;
-
-    h3 {
-      color: #849db8;
-      margin: 0;
-      padding-top: rem-calc(8);
-      font-size: rem-calc(16);
-    }
-
-    .button {
-      margin-bottom: 0;
-    }
-  }
-
-  .content {
-    position: relative;
-    height: 100%;
+    width: 100%;
+    height: auto;
     background: $white;
-    overflow: hidden;
+    border-radius: $global-radius;
+    border: 1px solid $section-border-color;
+    margin-bottom: $column-gutter;
 
-    .bodyText {
-      padding: rem-calc(10) rem-calc(20);
-    }
-
-
-    // TICKETS PANEL
-
-    &.tickets {
-      table {
-
-      }
-    }
-  }
-
-  .footer {
-    border-bottom: 1px solid $section-border-color;
-    padding: rem-calc(10) rem-calc(20);
-    background: #ecf1f5;
-    height: rem-calc(56);
-    overflow: hidden;
-  }
-
-
-  // Elementpanel with tabs
-
-  &.withTabs {
     .title {
-      border-bottom: 0;
+        height: auto;
+        padding: rem-calc(10) rem-calc(10);
+        border-bottom: 1px solid $section-border-color;
+        background: $section-title-color;
+        overflow: hidden;
+        h3 {
+            color: #849db8;
+            padding: 0 10px;
+            margin: 0;
+            font-size: rem-calc(16);
+        }
+        .button {
+            margin-bottom: 0;
+        }
     }
 
-    ul.tabs {
-      padding-top: 0!important;
-      margin-left: rem-calc(-12);
-      z-index: 10px;
-
-      .tab-title {
-        a {
-          padding-top: 12px;
-          padding-bottom: 12px;
-          padding-left: rem-calc(30);
-          padding-right: rem-calc(30);
-          color: #acb5c1;
+    .content {
+        position: relative;
+        height: 100%;
+        background: $white;
+        clear: both;
+        .bodyText {
+            padding: rem-calc(10) rem-calc(20);
         }
-        &.active {
-          a {
-            color: $secondary-color;
-            background-color: $white;
-            &:hover {
-              color: $secondary-color;
+
+    }
+
+    .footer {
+        border-bottom: 1px solid $section-border-color;
+        padding: rem-calc(10) rem-calc(20);
+        background: #ecf1f5;
+        height: rem-calc(56);
+        overflow: hidden;
+    }
+
+
+    // Elementpanel with tabs
+
+    &.withTabs {
+        .title {
+            border-bottom: 0;
+        }
+
+        ul.tabs {
+            padding-top: 0 !important;
+            margin-left: rem-calc(-12);
+            z-index: 10px;
+
+            .tab-title {
+                a {
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                    padding-left: rem-calc(30);
+                    padding-right: rem-calc(30);
+                    color: #acb5c1;
+                }
+                &.active {
+                    a {
+                        color: $secondary-color;
+                        background-color: $white;
+                        &:hover {
+                            color: $secondary-color;
+                        }
+                    }
+                }
             }
-          }
+
         }
-      }
 
+        .tabs-content {
+            border-top: 0;
+        }
     }
 
-    .tabs-content {
-      border-top: 0;
+    &.emailbox {
+        margin-bottom: 0;
     }
-  }
-
-  &.emailbox {
-    margin-bottom: 0;
-  }
 }
