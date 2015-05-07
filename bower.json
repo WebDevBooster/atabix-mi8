@@ -13,7 +13,7 @@
     "highcharts-release": "4.*",
     "atabix-mi8": "https://github.com/atabix/atabix-mi8.git",
     "atabix-sweetalert": "latest",
-    "select2": "latest",
+    "select2": "2.*",
     "mousetrap": "https://github.com/ccampbell/mousetrap.git"
   },
   "private": true
