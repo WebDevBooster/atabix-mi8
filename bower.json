@@ -1,6 +1,6 @@
 {
   "name": "atabix-mi8",
-  "version": "1.0",
+  "version": "1.3",
   "main": [
     "css/mi8.css",
     "js/mi8.js"
@@ -11,10 +11,9 @@
     "jqueryui": "latest",
     "jquery-file-upload": "latest",
     "highcharts-release": "4.*",
-    "atabix-mi8": "https://github.com/atabix/atabix-mi8.git",
     "atabix-sweetalert": "latest",
     "select2": "2.*",
-    "mousetrap": "https://github.com/ccampbell/mousetrap.git"
+    "mousetrap": "latest"
   }
 }
 
