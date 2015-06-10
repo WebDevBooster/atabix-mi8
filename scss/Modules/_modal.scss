@@ -2,186 +2,182 @@
 
 .md-perspective,
 .md-perspective body {
-  height: 100%;
-  overflow: hidden;
+    height: 100%;
+    overflow: hidden;
 }
 
-.md-perspective body  {
-  background: $black;
-  -webkit-perspective: 600px;
-  -moz-perspective: 600px;
-  perspective: 600px;
+.md-perspective body {
+    background: $black;
+    -webkit-perspective: 600px;
+    -moz-perspective: 600px;
+    perspective: 600px;
 }
 
 .container {
-  background: $primary-color;
-  min-height: 100%;
+    background: $primary-color;
+    min-height: 100%;
 }
 
 .md-modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 50%;
-  min-width: 320px;
-  height: auto;
-  z-index: 2000;
-  visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    min-width: 320px;
+    height: auto;
+    z-index: 2000;
+    visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
 }
 
 .md-show {
-  visibility: visible;
+    visibility: visible;
 }
 
 .md-overlay {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  visibility: hidden;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  opacity: 0;
-  background: $black;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    opacity: 0;
+    background: $black;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
 }
 
 .md-show ~ .md-overlay {
-  opacity: 0.6;
-  visibility: visible;
+    opacity: 0.6;
+    visibility: visible;
 }
 
 /* Content styles */
 .md-content {
-  overflow: hidden;
-  color: $primary-color;
-  background: $white;
-  position: relative;
-  border-radius: 3px;
-  border: 1px solid $section-border-color;
-  margin: 0 auto;
+    overflow: hidden;
+    color: $primary-color;
+    background: $white;
+    position: relative;
+    border-radius: 3px;
+    border: 1px solid $section-border-color;
+    margin: 0 auto;
 }
 
 .md-content > .inner {
-  margin: 0;
-  font-weight: 300;
-  font-size: 1.15em;
+    margin: 0;
+    font-weight: 300;
+    font-size: 1.15em;
 }
-
 
 // MODAL: SEARCH
 
 .md-modal {
-  &.search {
-    width: rem-calc(720);
-    min-height: rem-calc(320);
+    @extend .aliased;
 
-    .inner {
-      .searchBar {
-        position: relative;
-        overflow: hidden;
-        border-bottom: 1px solid $section-border-color;
-
-        .fi-magnifying-glass {
-          position: relative;
-          float: left;
-          font-size: rem-calc(40);
-          padding: rem-calc(10);
-          color: $section-border-color;
-        }
-
-        input[type="text"] {
-          position: relative;
-          float: left;
-          width: 90%;
-          border: 0;
-          padding: rem-calc(8);
-          box-shadow: none;
-          height: rem-calc(50);
-          margin: 0;
-          font-size: rem-calc(24);
-          margin-top: rem-calc(8);
-          color: $body-font-color;
-          &:focus {
-            box-shadow: none;
-            background: transparent;
-          }
-        }
-      }
-
-      .searchTitlebar {
-        position: relative;
-        height: rem-calc(35);
-        font-family: $additional-font;
-        font-size: rem-calc(13);
-        border-bottom: 1px solid $section-border-color;
-        overflow: hidden;
-        text-transform: uppercase;
-        color: #ced7e0;
-        .leftColumn {
-          padding: rem-calc(6) rem-calc(20);
-          width: rem-calc(400);
-          border-right: 1px solid $section-border-color;
-        }
-        .rightColumn {
-          padding: rem-calc(6) rem-calc(20);
-          width: rem-calc(300);
-        }
-      }
-
-      .searchResults {
-        position: relative;
-        overflow: hidden;
-        .leftColumn {
-          width: rem-calc(400);
-          background-color: $mainpanel-bg-color;
-          padding: rem-calc(0);
-          border-right: 1px solid $section-border-color;
-        }
-        .rightColumn {
-          padding: rem-calc(15) rem-calc(20);
-          overflow: hidden;
-        }
-        .rightColumn,
-        .leftColumn {
-          .ul {
-              max-height: rem-calc(300);
-              overflow-y: scroll;
-          }
-            
-            
-          .menu {
-            li {
-              display: block;
-              margin-bottom: rem-calc(6);
-              padding: rem-calc(6) rem-calc(3);
-              &.active {
-                background-color: $primary-color;
-              }
-
-              a {
-                font-size: rem-calc(14);
-                color: #b2bbc5;
-                &:hover {
-                  color: $body-font-color;
+    &.search {
+        width: rem-calc(720);
+        min-height: rem-calc(320);
+        .inner {
+            .searchBar {
+                position: relative;
+                overflow: hidden;
+                border-bottom: 1px solid $section-border-color;
+                .fi-magnifying-glass {
+                    position: relative;
+                    float: left;
+                    font-size: rem-calc(40);
+                    padding: rem-calc(10);
+                    color: $section-border-color;
                 }
-                &.active {
-                  color: $white;
+                input[type="text"] {
+                    position: relative;
+                    float: left;
+                    width: 90%;
+                    border: 0;
+                    padding: rem-calc(8);
+                    box-shadow: none;
+                    height: rem-calc(50);
+                    margin: rem-calc(15 0 0);
+                    font-size: rem-calc(24);
+                    color: $body-font-color;
+                    &:focus {
+                        box-shadow: none;
+                        background: transparent;
+                    }
                 }
-              }
             }
-          }
+
+            .searchTitlebar {
+                position: relative;
+                height: rem-calc(35);
+                font-family: $additional-font;
+                font-size: rem-calc(13);
+                border-bottom: 1px solid $section-border-color;
+                overflow: hidden;
+                text-transform: uppercase;
+                color: #ced7e0;
+                .leftColumn {
+                    padding: rem-calc(10) rem-calc(20);
+                    width: rem-calc(400);
+                    border-right: 1px solid $section-border-color;
+                }
+                .rightColumn {
+                    padding: rem-calc(10) rem-calc(20);
+                    width: rem-calc(300);
+                }
+            }
+
+            .searchResults {
+                position: relative;
+                overflow: hidden;
+                .leftColumn {
+                    width: rem-calc(400);
+                    background-color: $mainpanel-bg-color;
+                    padding: rem-calc(0);
+                    border-right: 1px solid $section-border-color;
+                }
+                .rightColumn {
+                    padding: rem-calc(15) rem-calc(20);
+                    overflow: hidden;
+                }
+                .rightColumn,
+                .leftColumn {
+                    .ul {
+                        max-height: rem-calc(300);
+                        overflow-y: scroll;
+                    }
+
+                    .menu {
+                        li {
+                            display: block;
+                            margin-bottom: rem-calc(6);
+                            padding: rem-calc(6) rem-calc(3);
+                            &.active {
+                                background-color: $primary-color;
+                            }
+
+                            a {
+                                font-size: rem-calc(14);
+                                color: #b2bbc5;
+                                &:hover {
+                                    color: $body-font-color;
+                                }
+                                &.active {
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
-      }
     }
-  }
 }

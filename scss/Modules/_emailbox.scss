@@ -22,11 +22,11 @@
 			    input {
 				    line-height: rem-calc(40px);
 				    height: rem-calc(40px);
-				    border:none;
+				    border: none;
 					border-bottom: 1px solid $section-border-color;
 					font-size: rem-calc(16px);
-					padding:rem-calc(0 20px);
-					margin:0;
+					padding: rem-calc(0 20px);
+					margin: 0;
 					position: relative;
 					width: 100%;
 					display: block;
@@ -74,7 +74,9 @@
 						    font-size: rem-calc(14px);
 					    }
 				    }
-				    &.new, &.active, &:hover {
+				    &.new,
+                    &.active,
+                    &:hover {
 						p {
 							color: #556982;
 						}    
@@ -113,7 +115,6 @@
 		
 		.email {
             height: 100%;
-            
 			@media #{$large-up} {
 				width: 75%;
 				float: left;
@@ -121,22 +122,22 @@
 			.top {
 				background: #fafcfe;
 				border-bottom: 1px solid $section-border-color;
-				padding:rem-calc(5px 10px);
+				padding: rem-calc(5 10);
 				@media #{$medium-up} {
-					padding:rem-calc(4px 20px 3px 20px);
+					padding: rem-calc(4px 20px 3px 20px);
 				}
 				.new {
 					background: $primary-color;
 					line-height: rem-calc(32px);
-					height: rem-calc(32px);
-					padding:rem-calc(0 10px);
-					font-size: rem-calc(14px);
+					height: rem-calc(32);
+					padding:rem-calc(0 10);
+					font-size: rem-calc(14);
 					color: white;
 					border-radius: 3px;
 					-webkit-border-radius: 3px;
 					cursor: pointer;
 					width: 100%;
-					margin:rem-calc(0 0 5px 0);
+					margin:rem-calc(0 0 5 0);
 				    @media #{$medium-up} {
 					    margin:0;
 						float: left;

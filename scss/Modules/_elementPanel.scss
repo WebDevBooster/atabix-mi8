@@ -17,10 +17,18 @@
             padding: 0 10px;
             margin: 0;
             font-size: rem-calc(16);
+            line-height: rem-calc(37);
+        }
+        select, input {
+            margin:0;
         }
         .button {
             margin-bottom: 0;
         }
+    }
+
+    table.dataTable {
+        margin:0!important;
     }
 
     .content {
@@ -48,11 +56,11 @@
     &.withTabs {
         .title {
             border-bottom: 0;
+            padding-bottom: 0;
         }
-
         ul.tabs {
-            padding-top: 0 !important;
-            margin-left: rem-calc(-12);
+            padding-top: 0!important;
+            margin-left: 0;
             z-index: 10;
             .tab-title {
                 a {
@@ -74,12 +82,10 @@
             }
 
         }
-
         .tabs-content {
             border-top: 0;
         }
     }
-
     &.emailbox {
         margin-bottom: 0;
     }

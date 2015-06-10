@@ -1,112 +1,139 @@
 .primaryNav {
-  clear: both;
-
-  @media #{$large-up} {
-    padding-top: rem-calc(10);
-    padding-left: rem-calc(15);
-  }
-
-  ul.menu {
-    li {
-      margin-right: rem-calc(10);
-      margin-left: rem-calc(10);
-      border-top: 1px solid transparent;
-      border-left: 1px solid transparent;
-      border-right: 1px solid transparent;
-      display: inline-block;
-
-      a {
-        display: block;
-        padding-left: rem-calc(15);
-        padding-right: rem-calc(15);
+    clear: both;
+    @media #{$large-up} {
         padding-top: rem-calc(10);
-        padding-bottom: rem-calc(5);
-        border: 1px solid transparent;
-        &:hover {
-          color: $secondary-color;
-        }
-        &.active {
-          color: $secondary-color;
-        }
-      }
-
-      &.has-subs {
-        .submenu {
-          display: none;
-          margin: 0 0 0 -1px;
-          background: $white;
-          border: 1px solid $section-border-color;
-          box-shadow:
-
-          ul {
-            margin: 0;
-            padding: 0;
-          }
-        }
-
-        &:hover {
-          border-top-left-radius: $global-radius;
-          border-top-right-radius: $global-radius;
-          border-top: 1px solid $section-border-color;
-          border-left: 1px solid $section-border-color;
-          border-right: 1px solid $section-border-color;
-
-          .submenu {
-            position: absolute;
-            z-index: 10;
-            display: block;
-            border-left: 1px solid $section-border-color;
-            border-bottom-left-radius: $global-radius;
-            border-bottom-right-radius: $global-radius;
-            border-top-right-radius: $global-radius;
-
-            .inner {
-              float: left;
-              padding: 0;
-              min-width: rem-calc(200);
-
-              &:first-of-type {
-                border-right: 1px solid $section-border-color;
-              }
-
-              .categoryTitle {
-                background: $section-title-color;
-                padding: rem-calc(4) rem-calc(15);
-                font-size: 12px;
-                text-transform: uppercase;
-                margin-bottom: 0;
-                color: $body-font-color;
-              }
-
-              ul {
-                margin: 0;
-                padding: 0;
-
-                li {
-                  display: block;
-                  margin: 0;
-                  padding: 0;
-                  a {
-                    color: $secondary-nav-color;
-                    padding-top: 5px;
-                    padding-bottom: 5px;
-                    padding-left: 15px;
-                    padding-right: 15px;
-                    margin: 0;
-                    &:hover {
-                      color: $primary-color;
-                      background: $white-smoke;
-                    }
-                    &.active {
-                      color: $primary-color;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+        padding-left: rem-calc(5);
     }
-  }
+
+    ul.menu {
+        @media #{$large-up} {
+            margin-left: rem-calc(-2);
+        }
+        li {
+            margin-right: 0;
+            margin-left: 0;
+            border-top: 1px solid transparent;
+            border-left: 1px solid transparent;
+            border-right: 1px solid transparent;
+            display: inline-block;
+            a {
+                position: relative;
+                display: block;
+                padding-left: rem-calc(15);
+                padding-right: rem-calc(15);
+                padding-top: rem-calc(10);
+                padding-bottom: rem-calc(5);
+                border: 1px solid transparent;
+                font-smoothing: antialiased;
+                -ms-font-smoothing: antialiased;
+                -webkit-font-smoothing: antialiased;
+                -o-font-smoothing: antialiased;
+                &:hover {
+                    color: $secondary-color;
+                }
+                &.active {
+                    color: $secondary-color;
+                }
+            }
+            &.has-subs {
+                .submenu {
+                    display: none;
+                    margin: 0 0 0 -1px;
+                    padding: 0;
+                    background: $white;
+                    border: 1px solid $section-border-color;
+                    box-shadow: 0;
+                }
+
+                ul {
+                    margin: 0;
+                    padding: 0;
+                }
+
+                &:hover {
+                    border-top-left-radius: $global-radius;
+                    border-top-right-radius: $global-radius;
+                    border-top: 1px solid $section-border-color;
+                    border-left: 1px solid $section-border-color;
+                    border-right: 1px solid $section-border-color;
+                    .submenu {
+                        position: absolute;
+                        z-index: 10;
+                        display: block;
+                        border-left: 1px solid $section-border-color;
+                        border-bottom-left-radius: $global-radius;
+                        border-bottom-right-radius: $global-radius;
+                        border-top-right-radius: $global-radius;
+                        .inner {
+                            float: left;
+                            padding: 0;
+                            min-width: rem-calc(200);
+                            &:first-of-type {
+                                border-right: 1px solid $section-border-color;
+                                &.oneColumn {
+                                    border-right: 0;
+                                }
+                            }
+
+                            .categoryTitle {
+                                background: $section-title-color;
+                                padding: rem-calc(5) rem-calc(17);
+                                font-size: 12px;
+                                text-transform: uppercase;
+                                margin-bottom: 0;
+                                color: $body-font-color;
+                                letter-spacing: 1px;
+                                font-weight: 700;
+                            }
+
+                            ul {
+                                margin: 0;
+                                padding: 0;
+
+                                li {
+                                    display: block;
+                                    margin: 0;
+                                    padding: 0;
+                                    a {
+                                        color: $secondary-nav-color;
+                                        padding-top: 4px;
+                                        padding-bottom: 4px;
+                                        padding-left: 15px;
+                                        padding-right: 15px;
+                                        margin: 0;
+                                        font-smoothing: subaliased;
+                                        -ms-font-smoothing: subaliased;
+                                        -webkit-font-smoothing: subaliased;
+                                        -o-font-smoothing: subaliased;
+                                        font-size: rem-calc(14);
+                                        &:hover {
+                                            color: $primary-color;
+                                            background: $white-smoke;
+                                        }
+                                        &.active {
+                                            color: $primary-color;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.menuIcon {
+                margin-right: rem-calc(10);
+                a {
+                    color: #6eb4ef;
+                    &:hover {
+                        color: $body-font-color;
+                    }
+                    &:before {
+                        position: absolute;
+                        top: 0;
+                        font-size: rem-calc(20);
+                    }
+                }
+            }
+        }
+    }
 }

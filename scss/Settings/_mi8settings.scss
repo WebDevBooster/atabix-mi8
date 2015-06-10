@@ -31,11 +31,11 @@ $include-html-global-classes: $include-html-classes;
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 $include-html-grid-classes: $include-html-classes;
-// $include-xl-html-grid-classes: false;
+$include-xl-html-grid-classes: true;
 
 $row-width: 100%;
 $total-columns: 12;
-$column-gutter: rem-calc(40);
+$column-gutter: rem-calc(20);
 
 // c. Global
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -67,6 +67,8 @@ $info-color: #a0d3e8;
 $white       : #FFFFFF;
 $white-smoke : darken($white, 2%);
 $black       : #000000;
+$client: #ffa71d;
+$content-headertitle-color: #ced7e0;
 
 
 // We use these to define default font weights
@@ -1275,18 +1277,18 @@ $table-margin-bottom: 0;
 // 32. Thumbnails
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-media-classes: $include-html-classes;
+$include-html-media-classes: $include-html-classes;
 
 // We use these to control border styles
-// $thumb-border-style: solid;
-// $thumb-border-width: 4px;
-// $thumb-border-color: $white;
-// $thumb-box-shadow: 0 0 0 1px rgba($black,.2);
-// $thumb-box-shadow-hover: 0 0 6px 1px rgba($primary-color,0.5);
+$thumb-border-style: solid;
+$thumb-border-width: 2px;
+$thumb-border-color: $white;
+$thumb-box-shadow: 0 0 0 1px rgba($black,.2);
+$thumb-box-shadow-hover: 0 0 6px 1px rgba($primary-color,0.5);
 
 // Radius and transition speed for thumbs
-// $thumb-radius: $global-radius;
-// $thumb-transition-speed: 200ms;
+$thumb-radius: none;
+$thumb-transition-speed: 200ms;
 
 // 33. Tooltips
 // - - - - - - - - - - - - - - - - - - - - - - - - -

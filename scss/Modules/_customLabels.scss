@@ -1,0 +1,77 @@
+.taskLabel {
+    color: $section-border-color;
+}
+
+.projectLabel {
+    @extend .label;
+    width: 100%;
+    
+    &.sales {
+        
+    }
+    
+    &.design {
+        background-color: #AFE3D6;
+        color: #333333;
+    }
+    
+    &.frontend {
+        background-color: #EBE1A4;
+        color: #333333;
+    }
+    
+    &.development {
+        background-color: #005685;
+    }
+    
+    &.beta {
+        background-color: #C96D6D;
+    }
+    
+    &.support {
+        background-color: #F29552;
+    }
+    
+    &.closed {
+        background-color: $body-font-color;
+    }
+}
+
+.salesLabel {
+    @extend .label;
+    width: 100%;
+    
+    &.cold {
+        background-color: #AFE3D6;
+        color: #333333;
+    }
+    
+    &.frontend {
+        background-color: #EBE1A4;
+        color: #333333;
+    }
+    
+    &.development {
+        background-color: #005685;
+    }
+    
+    &.lost {
+        background-color: #C96D6D;
+    }
+    
+    &.warm {
+        background-color: #F29552;
+    }
+    
+    &.closed {
+        background-color: $body-font-color;
+    }
+}
+
+.mailloglabel {
+    color: #CCCCCC;
+    
+    &.active {
+        color: $primary-color;
+    }
+}

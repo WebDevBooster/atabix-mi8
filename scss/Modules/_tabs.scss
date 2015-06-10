@@ -1,48 +1,36 @@
 .tabs {
-  padding-top: $column-gutter / 2;
-
-  .tab-title {
-    border-top: 1px solid transparent;
-    border-left: 1px solid transparent;
-    border-right: 1px solid transparent;
-    border-top-left-radius: $global-radius;
-    border-top-right-radius: $global-radius;
-
-    a {
-      displayL: block;
-      background-color: transparent;
-      padding: rem-calc(10);
-      padding-bottom: rem-calc(5);
-      margin-bottom: rem-calc(-1);
-      border-top-left-radius: $global-radius;
-      border-top-right-radius: $global-radius;
-      &:hover {
-        background: none;
-      }
+    padding-left: 0;
+    margin-left: 0;
+    .tab-title {
+        border: 1px solid transparent;
+        border-radius: $global-radius;
+        a {
+            padding: 6px rem-calc(15);
+            text-align: center;
+            @extend .aliased;
+        }
+        &.active {
+            border-top: 1px solid transparent;
+            border-left: 1px solid transparent;
+            border-right: 1px solid transparent;
+            a {
+                color: #666666;
+                padding: rem-calc(12) rem-calc(15);
+            }
+        }
     }
-
-    &.active {
-      border-top: 1px solid $section-border-color;
-      border-left: 1px solid $section-border-color;
-      border-right: 1px solid $section-border-color;
-      a {
-        background-color: $mainpanel-bg-color;
-      }
-    }
-  }
 }
 
 .tabs-content {
-  margin-bottom: 0;
-  border-top: 1px solid $section-border-color;
-  height: 100%;
-
-  .content {
-    background: $white;
+    margin-bottom: 0;
+    border-top: 1px solid $section-border-color;
     height: 100%;
-  }
-
-  section {
-    background: transparent;
-  }
+    .content {
+        background: $white;
+        height: 100%;
+        padding: 0;
+    }
+    section {
+        background: transparent;
+    }
 }

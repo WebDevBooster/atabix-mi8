@@ -1,20 +1,21 @@
 {
-  "name": "atabix-mi8",
-  "version": "1.3",
-  "main": [
-    "css/mi8.css",
-    "js/mi8.js"
-  ],
-  "dependencies": {
-    "foundation": "5.4.7",
-    "jquery-form": "latest",
-    "jqueryui": "latest",
-    "jquery-file-upload": "latest",
-    "highcharts-release": "4.*",
-    "atabix-sweetalert": "latest",
-    "select2": "3.*",
-    "mousetrap": "latest"
-  }
+    "name": "atabix-mi8",
+    "version": "1.3",
+    "main": [
+        "css/mi8.css",
+        "js/mi8.js"
+    ],
+    "dependencies": {
+        "foundation": "5.4.7",
+        "jquery-form": "latest",
+        "jqueryui": "latest",
+        "jquery-file-upload": "latest",
+        "highcharts-release": "4.*",
+        "atabix-sweetalert": "latest",
+        "select2": "3.*",
+        "mousetrap": "latest",
+        "matchHeight": "latest"
+    }
 }
 
 

@@ -1,0 +1,207 @@
+body, p, table, td, ul, li {
+	font-family: 'HelveticaNeue';
+	color: #526880;
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+}
+.logo {
+    padding: 30px;
+    text-align: center;
+}
+.content {
+	.divider {
+		width: 50px;
+		height: 1px;
+		background: #526880;
+	}
+	.introdivider {
+		margin:120px 0 60px 0;
+	}
+
+	.frontpage {
+		padding:300px 0 0 25%;
+		width: 100%;
+		.inner {
+			padding:0 0 0 30px;
+			p {
+				font-size: 20px;
+				&.title {
+					font-size: 30px;
+					text-transform: uppercase;
+					font-weight: bold;
+				}
+			}
+			.divider {
+				margin:50px 0;
+			}
+		}
+	}
+	.left {
+		float: left;
+		width: 25%;
+		.inner {
+			padding:0 30px 0 0;
+			p {
+				text-align: right;
+				line-height: 1.5;
+				&.title {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+	.right {
+		float: left;
+		width: 75%;
+		.inner {
+			padding:0 0 0 30px;
+			p {
+				margin:0 0 30px 0;
+				line-height: 1.5;
+				&.title {
+					font-weight: bold;
+				}
+				&.footnote {
+					color: rgb(180,180,180);
+					font-size: 9px;
+				}
+				&.sender {
+					margin:100px 0 30px 0;
+					span {
+						display: block;
+						font-weight: bold;
+					}
+				}
+			}
+			ul {
+				margin:0 0 30px 0;
+				li {
+					list-style: disc;
+					list-style-position: inside;
+				}
+			}
+			h1 {
+				font-weight: bold;
+				font-size: 16px;
+				margin:0 0 30px 0;
+				line-height: 1.5;
+			}
+			table {
+				width: 100%;
+				margin:0 0 5px 0;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border:1px solid #526880;
+				&.col2 {
+					td,th {
+						width: 50%;
+					}
+				}
+				tr {
+					td, th {
+						text-align: left;
+						padding:0 20px;
+						border-right:1px solid #526880;
+						border-collapse: collapse;
+						border-spacing: 0px;
+						height: 24px;
+						vertical-align: middle;
+						&.price {
+							text-align: right;
+						}
+					}
+					th {
+						border-right: 0px;
+						border-bottom:1px solid #526880;
+					}
+					&.total {
+						td {
+							font-weight: bold;
+							font-size: 14px;
+						}
+					}
+				}
+			}
+			.signingLeft,
+			.signingRight {
+				float: left;
+				width: 50%;
+				p {
+					text-align: right;
+					border-bottom: 1px solid #526880;
+					margin:0 10px 30px 0;
+					&.empty {
+						line-height: 32px;
+					}
+				}
+			}
+			.signingRight {
+				p {
+					margin:0 0 30px 10px;
+				}
+			}
+		}
+	}
+	.clear {
+		display: block;
+		width: 100%;
+	}
+}
+.terms {
+	.text {
+		margin:0 0 30px 0;
+		p {
+			color: black;
+			margin:0 0 10px 0;
+			&.title {
+				font-weight: bold;
+				margin:0;
+			}
+		}
+	}	
+}
+
+.tar,
+table tr td.tar, 
+table tr th.tar {
+	text-align: right;
+}
+.fwb {
+    font-weight: bold;
+}
+
+
+
+
+
+
+table.footer {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+table.footer td  {
+    width: 20%;
+}
+
+.footerlabel {
+    font-weight: bold;
+    font-size: 9px;
+    margin: 2px;
+    display: block;
+    color: #465A73;
+}
+
+.footertext {
+    font-size: 9px;
+    margin: 2px;
+    display: block;
+    color: #465A73;
+}
+
+.footertextspan {
+    width: 60px;
+    display: block;
+}
+

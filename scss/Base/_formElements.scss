@@ -1,5 +1,6 @@
 select {
-  width: auto;
+    width: auto;
+    padding:rem-calc(5px 25px 5px 5px);
 }
 
 input {
@@ -10,5 +11,17 @@ input {
 		font-size: rem-calc(14px);
 		line-height: rem-calc(20px);
 		height: rem-calc(20px);
+        background: transparent;
+        &:focus {
+            border: 1px solid $section-border-color;
+        }
 	}
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: darken($section-title-color, 10%);
+}
+
+input:-moz-placeholder, textarea:-moz-placeholder {
+    color: darken($section-title-color, 10%);
 }
