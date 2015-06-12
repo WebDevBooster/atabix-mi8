@@ -1,6 +1,6 @@
 {
     "name": "atabix-mi8",
-    "version": "1.3",
+    "version": "2.0",
     "main": [
         "css/mi8.css",
         "js/mi8.js"
