@@ -5,7 +5,6 @@
     border-radius: $global-radius;
     border: 1px solid $section-border-color;
     margin-bottom: $column-gutter;
-
     .title {
         height: auto;
         padding: rem-calc(10) rem-calc(10);
@@ -26,11 +25,6 @@
             margin-bottom: 0;
         }
     }
-
-    table.dataTable {
-        margin:0!important;
-    }
-
     .content {
         position: relative;
         height: 100%;
@@ -41,13 +35,20 @@
         }
 
     }
-
     .footer {
         border-bottom: 1px solid $section-border-color;
         padding: rem-calc(10) rem-calc(20);
         background: #ecf1f5;
         height: rem-calc(56);
         overflow: hidden;
+    }
+
+    table.dataTable {
+        margin:0!important;
+    }
+
+    .select2-container {
+        margin: rem-calc(0 0 15 0);
     }
 
 
