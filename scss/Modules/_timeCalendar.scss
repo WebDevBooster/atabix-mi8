@@ -54,20 +54,17 @@
 
 .fc-toolbar {
     .fc-button-group {
-        .fc-button {
-
-        }
-        .fc-prev-button {
-            border-top-left-radius: $global-radius;
-            border-bottom-left-radius: $global-radius;
-        }
-        .fc-next-button {
-            border-top-right-radius: $global-radius;
-            border-bottom-right-radius: $global-radius;
+        .fc-state-default {
+            background-image: none;
+            background-color: $secondary-color;
+            color: $body-font-color;
         }
     }
     .fc-today-button {
-        @extend .button.secondary.radius;
+        background: transparent!important;
+        border: 0;
+        color: $body-font-color;
+        text-transform: uppercase;
     }
 }
 
