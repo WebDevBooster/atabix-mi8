@@ -39,10 +39,7 @@
 
     .rightPanel {
         border-left: 1px solid $section-border-color;
-        padding-top: $column-gutter / 2;
-        padding-bottom: $column-gutter / 2;
-        padding-left: $column-gutter;
-        padding-right: $column-gutter;
+        padding: $column-gutter;
         background: $sidepanel-bg-color;
         height: 100%;
         min-height: calc(100vh - 140px);
