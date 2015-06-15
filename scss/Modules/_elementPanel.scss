@@ -43,15 +43,6 @@
         overflow: hidden;
     }
 
-    table.dataTable {
-        margin:0!important;
-    }
-
-    .select2-container {
-        margin: rem-calc(0 0 15 0)!important;
-    }
-
-
     // Elementpanel with tabs
 
     &.withTabs {
@@ -89,5 +80,19 @@
     }
     &.emailbox {
         margin-bottom: 0;
+    }
+
+    table.dataTable {
+        margin:0!important;
+    }
+
+    .select2-container {
+        margin: rem-calc(0 0 15 0)!important;
+    }
+
+    .daylabel {
+        -ms-transform: rotate(-60deg); /* IE 9 */
+        -webkit-transform: rotate(-60deg); /* Chrome, Safari, Opera */
+        transform: rotate(-60deg);
     }
 }
