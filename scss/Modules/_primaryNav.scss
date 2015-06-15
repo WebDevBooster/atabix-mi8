@@ -120,9 +120,9 @@
             &.menuIcon {
                 margin-right: rem-calc(10);
                 a {
-                    color: #6eb4ef;
+                    color: transparentize(#849db8, 0.70);
                     &:hover {
-                        color: $body-font-color;
+                        color: #849db8;
                     }
                     &:before {
                         position: absolute;

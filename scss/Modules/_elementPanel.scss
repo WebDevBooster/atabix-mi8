@@ -25,6 +25,8 @@
         .button {
             margin-bottom: 0;
             margin-top: rem-calc(4);
+            padding-top: 6px;
+            padding-bottom: 5px;
         }
         .paginate_button {
             line-height: rem-calc(37)
@@ -49,7 +51,6 @@
     }
 
     // Elementpanel with tabs
-
     &.withTabs {
         .title {
             border-bottom: 0;
