@@ -9,7 +9,7 @@
     @extend .bounceIn;
     .title {
         height: auto;
-        padding: rem-calc(0 5 0 15)!important;
+        padding: 5px 6px 2px 15px !important;
         border-bottom: 1px solid $section-border-color;
         background: $section-title-color;
         overflow: hidden;
