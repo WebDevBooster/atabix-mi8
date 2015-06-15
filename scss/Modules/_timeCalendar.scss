@@ -38,3 +38,17 @@
     min-height: rem-calc(50);
 }
 
+.fc {
+    hr {
+        height: 0;
+        margin: 0;
+        padding: 0 0 2px;
+        border-style: solid;
+        background-color: red;
+        position: relative;
+        border: 0;
+        @extend .animated;
+        @extend .bounceInTop;
+    }
+}
+
