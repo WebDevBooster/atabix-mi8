@@ -47,6 +47,15 @@
             padding: rem-calc(10) rem-calc(20);
         }
 
+        table {
+            .select2-container {
+                margin: rem-calc(0 0 15 0)!important;
+            }
+            &.dataTable {
+                margin:0!important;
+            }
+        }
+
     }
     .footer {
         border-bottom: 1px solid $section-border-color;
@@ -92,15 +101,6 @@
     }
     &.emailbox {
         margin-bottom: 0;
-    }
-
-    table {
-        .select2-container {
-            margin: rem-calc(0 0 15 0)!important;
-        }
-        &.dataTable {
-            margin:0!important;
-        }
     }
 
     .select2-container {
