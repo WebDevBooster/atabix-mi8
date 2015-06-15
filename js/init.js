@@ -35,11 +35,13 @@ $(function() {
     });
 });
 
-// Layout equalizer
+
+// Equalize now function
 function equalizeNow() {
     $('.equalize').matchHeight();
 }
 
+// Execute once dom is ready (default).
 $(document).ready(function(){
     equalizeNow();
 });
