@@ -65,8 +65,16 @@
             }
         }
         .fc-state-disabled {
+
+        }
+        .fc-today-button {
             padding-left: 0!important;
             padding-right: 0!important;
+            background-color: transparent;
+            color: $body-font-color;
+            &:hover {
+                color: $body-font-color;
+            }
         }
     }
     .fc-today-button {
