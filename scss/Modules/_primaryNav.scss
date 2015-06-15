@@ -118,7 +118,7 @@
             &.menuIcon {
                 margin-right: rem-calc(10);
                 a {
-                    color: transparentize(#849db8, 0.5);
+                    color: transparentize(#849db8, 0.5)!important;
                     &:hover {
                         color: #849db8;
                     }
