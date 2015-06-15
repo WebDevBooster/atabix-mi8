@@ -7,6 +7,7 @@
     margin-bottom: $column-gutter;
     @extend .animated;
     @extend .fadeIn;
+
     .title {
         height: auto;
         padding: 5px 6px 2px 15px !important;
@@ -30,8 +31,11 @@
             padding-top: 6px;
             padding-bottom: 5px;
         }
-        .paginate_button {
-            line-height: rem-calc(37)
+        .dataTables_paginate {
+            margin-right: -6px;
+            .paginate_button {
+                line-height: rem-calc(37)
+            }
         }
     }
     .content {
