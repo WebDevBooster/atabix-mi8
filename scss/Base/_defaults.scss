@@ -19,7 +19,7 @@ p {
 
 p,
 h1, h2, h3, h4 {
-    @extend font-smoothing(on);
+    @include font-smoothing(on);
     i {
         margin-right: rem-calc(10);
         color: #849db8;
@@ -63,6 +63,7 @@ button {
 }
 
 // Priority message colors
+
 .priority1 {
     color: $alert-color;
     font-weight: 700;
