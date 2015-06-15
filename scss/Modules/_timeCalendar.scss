@@ -52,3 +52,22 @@
     }
 }
 
+.fc-toolbar {
+    .fc-button-group {
+        .fc-button {
+            @extend .button;
+        }
+        .fc-prev-button {
+            border-top-left-radius: $global-radius;
+            border-bottom-left-radius: $global-radius;
+        }
+        .fc-next-button {
+            border-top-right-radius: $global-radius;
+            border-bottom-right-radius: $global-radius;
+        }
+    }
+    .fc-today-button {
+        display: none;
+    }
+}
+
