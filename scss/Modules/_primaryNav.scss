@@ -24,12 +24,9 @@
                 padding-top: rem-calc(10);
                 padding-bottom: rem-calc(5);
                 border: 1px solid transparent;
-                font-smoothing: antialiased;
-                -ms-font-smoothing: antialiased;
-                -webkit-font-smoothing: antialiased;
-                -o-font-smoothing: antialiased;
+                @include font-smoothing(on);
                 &:hover {
-                    color: $secondary-color;
+                    color: #849db8;
                 }
                 &.active {
                     color: $secondary-color;

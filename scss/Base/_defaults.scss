@@ -22,6 +22,7 @@ h1, h2, h3, h4 {
     @extend font-smoothing(on);
     i {
         margin-right: rem-calc(10);
+        color: #849db8;
     }
 }
 h1 {
@@ -176,7 +177,6 @@ table {
                         text-decoration: underline;
                     }
                 }
-
                 &.open {
                     color: $success-color;
                 }
@@ -193,7 +193,6 @@ table {
                     display: block;
                 }
             }
-
             &:hover {
                 background: #fffeed;
                 td {
