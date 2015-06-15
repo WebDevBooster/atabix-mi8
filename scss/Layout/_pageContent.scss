@@ -21,9 +21,13 @@
         .fc {
             margin-bottom: 0;
         }
-        h1 {
+        header {
             border-bottom: 1px solid $section-border-color;
-            padding-bottom: 5px;
+            padding: 5px 0;
+            margin-bottom: 15px;
+            h1 {
+                margin: 0;
+            }
         }
     }
 
