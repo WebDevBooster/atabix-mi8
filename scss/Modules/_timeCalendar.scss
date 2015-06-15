@@ -44,9 +44,9 @@
         margin: 0;
         padding: 0 0 2px;
         border-style: solid;
-        background-color: red;
+        background-color: red!important;
         position: relative;
-        border: 0;
+        border: 0!important;
         @extend .animated;
         @extend .bounceInTop;
     }
