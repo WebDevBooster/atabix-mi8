@@ -58,10 +58,15 @@
             background-image: none;
             background-color: $body-font-color;
             color: #ffffff;
+            text-shadow: none;
+            box-shadow: none
+            &.fc-state-active {
+                background-color: transparentize($body-font-color, 0.4);
+            }
         }
         .fc-state-disabled {
-            padding-left: 0;
-            padding-right: 0;
+            padding-left: 0!important;
+            padding-right: 0!important;
         }
     }
     .fc-today-button {
@@ -73,6 +78,9 @@
     .fc-center {
         h2 {
             text-transform: uppercase;
+            font-size: 15px;
+            font-weight: 600;
+            padding-top: 6px;
         }
     }
 }
