@@ -7,19 +7,20 @@
     margin-bottom: $column-gutter;
     .title {
         height: auto;
-        padding: rem-calc(10) rem-calc(10);
+        padding: rem-calc(2 10);
         border-bottom: 1px solid $section-border-color;
         background: $section-title-color;
         overflow: hidden;
         h3 {
             color: #849db8;
-            padding: 0 10px;
             margin: 0;
-            font-size: rem-calc(16);
-            line-height: rem-calc(37);
+            font-size: rem-calc(15);
+            line-height: rem-calc(40);
+            letter-spacing: 1px;
         }
-        select, input {
-            margin:0;
+        select,
+        input {
+            margin: 0;
         }
         .button {
             margin-bottom: 0;

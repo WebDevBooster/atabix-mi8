@@ -19,23 +19,20 @@ p {
 
 p,
 h1, h2, h3, h4 {
-    font-smoothing: antialiased;
-    -ms-font-smoothing: antialiased;
     -webkit-font-smoothing: antialiased;
-    -o-font-smoothing: antialiased;
+    -osx-webkit-font-smoothing: grayscale;
+}
+h1 {
+    font-weight: 500;
 }
 
 .aliased {
-    font-smoothing: antialiased;
-    -ms-font-smoothing: antialiased;
     -webkit-font-smoothing: antialiased;
-    -o-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 .subaliased {
-    font-smoothing: sub-aliased;
-    -ms-font-smoothing: sub-aliased;
-    -webkit-font-smoothing: sub-aliased;
-    -o-font-smoothing: sub-aliased;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
 }
 
 .noPadding {
