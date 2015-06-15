@@ -23,6 +23,7 @@ h1, h2, h3, h4 {
     i {
         margin-right: rem-calc(10);
         color: #849db8;
+        @include font-smoothing(off);
     }
 }
 h1 {
