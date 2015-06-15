@@ -56,8 +56,12 @@
     .fc-button-group {
         .fc-state-default {
             background-image: none;
-            background-color: $secondary-color;
-            color: $body-font-color;
+            background-color: $body-font-color;
+            color: #ffffff;
+        }
+        .fc-state-disabled {
+            padding-left: 0;
+            padding-right: 0;
         }
     }
     .fc-today-button {
@@ -65,6 +69,11 @@
         border: 0;
         color: $body-font-color;
         text-transform: uppercase;
+    }
+    .fc-center {
+        h2 {
+            text-transform: uppercase;
+        }
     }
 }
 
