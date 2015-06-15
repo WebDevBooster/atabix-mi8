@@ -19,8 +19,10 @@ p {
 
 p,
 h1, h2, h3, h4 {
-    -webkit-font-smoothing: antialiased;
-    -osx-webkit-font-smoothing: grayscale;
+    @extend font-smoothing(on);
+    i {
+        margin-right: rem-calc(10);
+    }
 }
 h1 {
     font-weight: 500;
