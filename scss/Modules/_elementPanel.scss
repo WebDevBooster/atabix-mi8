@@ -6,7 +6,7 @@
     border: 1px solid $section-border-color;
     margin-bottom: $column-gutter;
     @extend .animated;
-    @extend .bounceIn;
+    @extend .fadeIn;
     .title {
         height: auto;
         padding: 5px 6px 2px 15px !important;
