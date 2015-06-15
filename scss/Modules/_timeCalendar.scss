@@ -59,7 +59,7 @@
             background-color: $body-font-color;
             color: #ffffff;
             text-shadow: none;
-            box-shadow: none
+            box-shadow: none;
             &.fc-state-active {
                 background-color: transparentize($body-font-color, 0.4);
             }
