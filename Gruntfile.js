@@ -76,7 +76,7 @@ module.exports = function(grunt) {
                 },
                 files: [
                     {
-                        'js/atabix-mi.min.js': [
+                        'js/atabix-mi8.min.js': [
                               'components/fastclick/lib/fastclick.js'
                             , 'components/jquery-form/jquery.form.js'
                             , 'components/atabix-sweetalert/lib/sweet-alert.js'
