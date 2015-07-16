@@ -79,6 +79,7 @@
                                 color: $body-font-color;
                                 letter-spacing: 1px;
                                 font-weight: 700;
+                                @include font-smoothing(on);
                             }
 
                             ul {
