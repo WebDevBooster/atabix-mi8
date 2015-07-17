@@ -1,15 +1,15 @@
 @import "Settings/mixins";
 
 // Base partials
-@import "Base/font-awesome/font-awesome";
+@import "Base/loader/loaders";
 @import "Base/defaults";
 @import "Base/fonts";
 @import "Base/icons";
 @import "Base/formElements";
 @import "Base/sidebarEffects";
+@import "Base/tooltipster";
 @import "Base/modalEffects";
 @import "Base/animations";
-@import "Base/loader/loaders";
 
 // Layout partials
 @import "Layout/wrapper";

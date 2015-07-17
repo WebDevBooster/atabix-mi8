@@ -83,6 +83,7 @@ module.exports = function(grunt) {
                             , 'components/select2/select2.min.js'
                             , 'components/mousetrap/mousetrap.min.js'
                             , 'components/matchHeight/jquery.matchHeight-min.js'
+                            , 'components/tooltipster/js/jquery.tooltipster.min.js'
                             , 'js/lib/jquery.nicescroll.min.js'
                             , 'js/lib/toggleSidepanel.js'
                             , 'js/globalSearch.js'

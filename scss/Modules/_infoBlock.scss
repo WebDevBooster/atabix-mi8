@@ -1,0 +1,21 @@
+.infoBlock {
+    border-radius: $global-radius;
+    border: 1px solid $section-border-color;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    padding: $column-gutter / 2;
+    font-size: rem-calc(14);
+    .status {
+        margin-right: rem-calc(6);
+        margin-top: rem-calc(6);
+    }
+    p {
+        margin-bottom: rem-calc(6)!important;
+        font-size: rem-calc(14);
+        &.small {
+            font-size: rem-calc(11);
+        }
+        &:last-of-type {
+            margin-bottom: 0!important;
+        }
+    }
+}
