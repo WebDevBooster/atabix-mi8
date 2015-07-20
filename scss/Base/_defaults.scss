@@ -18,12 +18,11 @@ p {
 }
 
 p,
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
     @include font-smoothing(on);
     i {
         margin-right: rem-calc(10);
         color: #849db8;
-        @include font-smoothing(off);
     }
 }
 h1 {
@@ -39,8 +38,16 @@ h1 {
     -moz-osx-font-smoothing: auto;
 }
 
+// Padding resets
+
 .noPadding {
     padding-left: 0;
+    padding-right: 0;
+}
+.noPadding-left {
+    padding-left: 0;
+}
+.noPadding-right {
     padding-right: 0;
 }
 
@@ -172,7 +179,6 @@ table {
 
                 a {
                     color: $secondary-color;
-
                     &:hover {
                         text-decoration: underline;
                     }
@@ -203,7 +209,6 @@ table {
                     }
                 }
             }
-
             .highlight {
                 background-color: #eafbf6;
                 border-left: 1px solid $section-border-color;

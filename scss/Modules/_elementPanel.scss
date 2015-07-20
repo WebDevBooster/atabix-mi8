@@ -80,11 +80,13 @@
                 font-size: $h4-font-size;
                 margin-bottom: 5px;
             }
+
             label {
                 cursor: initial;
                 font-size: rem-calc(14);
                 color: $body-font-color;
             }
+
             p {
                 margin-bottom: rem-calc(10);
                 &:last-of-type {
@@ -94,13 +96,20 @@
                     font-size: rem-calc(11);
                 }
             }
+
             a {
                 color: $secondary-color;
                 @include font-smoothing(on);
             }
-            .has-top {
-                font-size: inherit;
+
+            .has-tip {
+                font-size: rem-calc(14);
             }
+
+            .smallBlock {
+                margin-bottom: 0;
+            }
+
         }
 
         table {
@@ -117,10 +126,15 @@
         background: #ecf1f5;
         height: rem-calc(67);
         overflow: hidden;
+        .button {
+            &.primary {
+                padding: rem-calc(7px 15px);
+            }
+
+        }
     }
 
     // Elementpanel with tabs
-
     &.withTabs {
         .title {
             border-bottom: 0;
@@ -158,9 +172,7 @@
         margin-bottom: 0;
     }
 
-
     // Custom elements
-
     .select2-container {
         margin: rem-calc(0 0 15 0)!important;
     }
