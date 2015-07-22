@@ -67,12 +67,19 @@
         @media #{$small-up} {
             overflow: none;
             position: absolute;
+            max-width: rem-calc(300);
+            right: rem-calc(-290);
+        }
+        @media #{$medium-up} {
+            max-width: rem-calc(420);
+            right: rem-calc(-410);
         }
         @media #{$large-up} {
             overflow: hidden;
+            width: 100%;
+            max-width: 100%;
+            right: 0;
             position: relative;
-        }
-        @media #{$large-up} {
             padding-left: 0!important;
             padding-right: 0!important;
             @include grid-column(4);
@@ -82,6 +89,7 @@
             right: 0!important;
             @extend .slideInRight;
         }
+
         &.hidePanel {
             right: rem-calc(-540)!important;
         }
