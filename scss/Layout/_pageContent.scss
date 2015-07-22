@@ -27,7 +27,7 @@
             border-bottom: 1px solid $section-border-color;
             padding: 0 0 15px;
             margin-bottom: 15px;
-            overflow: hidden;
+            @include clearfix();
             h1 {
                 margin: 0;
             }
