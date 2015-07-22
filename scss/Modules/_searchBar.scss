@@ -1,39 +1,42 @@
 .searchBar {
-  position: relative;
-  overflow: hidden;
-  border-bottom: 0;
-  padding-left: 15px;
-  padding-top: 5px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 0;
+    padding-left: 15px;
+    padding-top: 5px;
 
-  .fi-magnifying-glass {
-    position: relative;
-    float: left;
-    font-size: rem-calc(40);
-    padding: 0;
-    color: $section-border-color;
-    @media #{$small-only} {
-      padding: rem-calc(12) rem-calc(10);
-    }
-  }
-  input[type="text"] {
-    position: relative;
-    float: left;
-    width: 88%;
-    border: 0;
-    padding: rem-calc(8);
-    box-shadow: none;
-    height: rem-calc(50);
-    margin: rem-calc(3);
-    font-size: rem-calc(24);
-    padding-top: rem-calc(10);
-    color: $body-font-color;
-    @media #{$small-only} {
-      width: 85%;
+    .fi-magnifying-glass {
+        position: relative;
+        float: left;
+        font-size: rem-calc(40);
+        padding: 0;
+        color: $section-border-color;
+
+        @media #{$small-only} {
+            padding: rem-calc(5);
+            font-size: rem-calc(36);
+        }
     }
 
-    &:focus {
-      box-shadow: none;
-      background: transparent;
+    input[type="text"] {
+        position: relative;
+        float: left;
+        width: 88%;
+        border: 0;
+        padding: rem-calc(8);
+        box-shadow: none;
+        height: rem-calc(50);
+        margin: rem-calc(3);
+        font-size: rem-calc(24);
+        padding-top: rem-calc(10);
+        color: $body-font-color;
+        @media #{$small-only} {
+            width: 80%;
+        }
+
+        &:focus {
+            box-shadow: none;
+            background: transparent;
+        }
     }
-  }
 }
