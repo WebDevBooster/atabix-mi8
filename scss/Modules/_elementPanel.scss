@@ -1,4 +1,5 @@
 .elementPanel {
+    position: relative;
     width: 100%;
     height: auto;
     background: $white;
@@ -39,6 +40,7 @@
             }
         }
     }
+
     .content {
         position: relative;
         height: 100%;
@@ -50,20 +52,21 @@
         .bodyText {
             padding: rem-calc(15);
             @include clearfix();
+
             h1 {
                 font-weight: 700;
                 font-size: rem-calc(20);
-                margin-bottom: 5px;
+                margin-bottom: rem-calc(5);
             }
             h2 {
                 font-weight: 700;
                 font-size: rem-calc(18);
-                margin-bottom: 5px;
+                margin-bottom: rem-calc(5);
             }
             h3 {
                 font-weight: 700;
                 font-size: $h3-font-size;
-                margin-bottom: 5px;
+                margin-bottom: rem-calc(5);
                 &.sectionTitle {
                     font-size: 14px;
                     margin-bottom: 5px;
@@ -78,7 +81,7 @@
             h4 {
                 font-weight: 700;
                 font-size: $h4-font-size;
-                margin-bottom: 5px;
+                margin-bottom: rem-calc(5);
             }
 
             label {
@@ -86,7 +89,6 @@
                 font-size: rem-calc(14);
                 color: $body-font-color;
             }
-
             p {
                 margin-bottom: rem-calc(10);
                 &:last-of-type {
@@ -96,7 +98,6 @@
                     font-size: rem-calc(11);
                 }
             }
-
             a {
                 color: $secondary-color;
                 @include font-smoothing(on);
@@ -112,6 +113,21 @@
 
         }
 
+        .loaderOverlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: transparentize($white, 0.4);
+            top: 0;
+            @extend .animated;
+            @extend .fadeIn;
+            .loader {
+                position: relative;
+                top: 50%;
+                margin-top: -20px;
+            }
+        }
+
         table {
             .select2-container {
                 margin: 0!important;
@@ -121,6 +137,7 @@
             }
         }
     }
+
     .footer {
         padding: rem-calc(15);
         background: #ecf1f5;
@@ -131,6 +148,38 @@
                 padding: rem-calc(7px 15px);
             }
 
+        }
+    }
+
+    &.collapsable {
+        .title {
+            &:hover {
+                background: darken($section-title-color, 5%);
+                cursor: pointer;
+                transition: 250ms all ease;
+            }
+        }
+        &.open {
+            .collapse-icon {
+                margin-top: 15px;
+                @extend .fa;
+                @extend .fa-sort-asc;
+            }
+            .content {
+                display: block;
+            }
+        }
+        .collapse-icon {
+            width: 20px;
+            height: 20px;
+            float: right;
+            margin-top: rem-calc(8);
+            font-size: rem-calc(16);
+            @extend .fa;
+            @extend .fa-sort-desc;
+        }
+        .content {
+            display: none;
         }
     }
 
@@ -168,6 +217,8 @@
             border-top: 0;
         }
     }
+
+    // E-mailbox
     &.emailbox {
         margin-bottom: 0;
     }
