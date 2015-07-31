@@ -159,16 +159,6 @@
                 transition: 250ms all ease;
             }
         }
-        &.open {
-            .collapse-icon {
-                margin-top: 15px;
-                @extend .fa;
-                @extend .fa-sort-asc;
-            }
-            .content {
-                display: block;
-            }
-        }
         .collapse-icon {
             width: 20px;
             height: 20px;
@@ -178,8 +168,16 @@
             @extend .fa;
             @extend .fa-sort-desc;
         }
-        .content {
-            display: none;
+        &.closed {
+            .content {
+                display: none;
+            }
+        }
+        &.open {
+            .collapse-icon {
+                margin-top: 15px;
+                transform: rotate(180deg);
+            }
         }
     }
 
