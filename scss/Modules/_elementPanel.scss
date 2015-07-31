@@ -6,6 +6,8 @@
     border-radius: $global-radius;
     border: 1px solid $section-border-color;
     margin-bottom: $column-gutter;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
     @extend .animated;
     @extend .fadeIn;
 
@@ -15,6 +17,8 @@
         border-bottom: 1px solid $section-border-color;
         background: $section-title-color;
         overflow: hidden;
+        border-top-left-radius: $global-radius;
+        border-top-right-radius: $global-radius;
         h3 {
             color: #849db8;
             margin: 0;
@@ -43,7 +47,6 @@
 
     .content {
         position: relative;
-        display: block;
         height: 100%;
         background: $white;
         border-radius: $global-radius;
@@ -84,7 +87,6 @@
                 font-size: $h4-font-size;
                 margin-bottom: rem-calc(5);
             }
-
             label {
                 cursor: initial;
                 font-size: rem-calc(14);
@@ -159,25 +161,49 @@
                 cursor: pointer;
                 transition: 250ms all ease;
             }
-        }
-        .collapse-icon {
-            width: 20px;
-            height: 20px;
-            float: right;
-            margin-top: rem-calc(8);
-            font-size: rem-calc(16);
-            @extend .fa;
-            @extend .fa-sort-desc;
-        }
-        &.closed {
-            .content {
-                display: none;
+            .collapse-icon {
+                width: 20px;
+                height: 20px;
+                float: right;
+                font-size: rem-calc(16);
+                @extend .fa;
+                @extend .fa-sort-desc;
+            }
+            &.open {
+                .collapse-icon {
+                    transform: rotate(180deg);
+                    margin-right: 11px;
+                    margin-top: 12px;
+                }
+            }
+            &.closed {
+                .collapse-icon {
+                    margin-top: rem-calc(8);
+                }
             }
         }
-        &.open {
-            .collapse-icon {
-                margin-top: 15px;
-                transform: rotate(180deg);
+        .content {
+            display: block;
+        }
+        &.closed {
+            .title {
+                border-bottom: 0;
+                .collapse-icon {
+                    transform: rotate(180deg)!important;
+                    margin-right: 11px;
+                    margin-top: 12px;
+                }
+                &.open {
+                    border-bottom: 1px solid $section-border-color;
+                    .collapse-icon {
+                        transform: rotate(360deg)!important;
+                        margin-right: 0;
+                        margin-top: 8px;
+                    }
+                }
+            }
+            .content {
+                display: none;
             }
         }
     }
