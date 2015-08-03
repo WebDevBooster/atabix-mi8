@@ -12,7 +12,7 @@
 
     header {
         @extend .aliased;
-        margin-bottom: 0;
+        margin-bottom: 0!important;
         &.main {
             font-size: rem-calc(12);
             padding-left: rem-calc(18);
