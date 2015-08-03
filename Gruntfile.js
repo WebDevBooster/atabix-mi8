@@ -91,6 +91,7 @@ module.exports = function(grunt) {
                             , 'js/lib/modalEffects.js'
                             , 'js/toggleSidepanel.js'
                             , 'js/elementPanel-collapse.js'
+                            , 'js/notification-collapse.js'
                             , 'js/globalSearch.js'
                             , 'js/fixedHeight.js'
                             , 'js/autosave.js'
