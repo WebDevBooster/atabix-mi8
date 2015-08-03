@@ -84,6 +84,7 @@ module.exports = function(grunt) {
                             , 'components/mousetrap/mousetrap.min.js'
                             , 'components/matchHeight/jquery.matchHeight-min.js'
                             , 'components/tooltipster/js/jquery.tooltipster.min.js'
+                            , 'components/jquery-minicolors/jquery.minicolors.min.js'
                             , 'js/lib/jquery.nicescroll.min.js'
                             , 'js/lib/classie.js'
                             , 'js/lib/sidebarEffects.js'

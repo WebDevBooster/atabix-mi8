@@ -1,0 +1,94 @@
+meter,
+progress {
+    width: 100%;
+}
+
+.styled progress {
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    width: 100%;
+    height: 30px;
+
+    /* Firefox */
+    border: none;
+    background: #EEE;
+    border-radius: $global-radius;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;
+}
+
+.styled progress::-webkit-progress-bar {
+    background: #EEE;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;
+    border-radius: $global-radius;
+}
+
+.styled progress::-webkit-progress-value {
+    background-color: $alert-color;
+    border-radius: $global-radius;
+}
+
+.styled progress::-moz-progress-bar {
+    background-color: $alert-color;
+    border-radius: $global-radius;
+}
+
+.styled meter {
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    width: 100%;
+    height: rem-calc(15);
+
+    /* For Firefox */
+    background: #EEE;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;
+    border-radius: $global-radius;
+}
+
+/* WebKit */
+.styled meter::-webkit-meter-bar {
+    background: #EEE;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;
+    border-radius: $global-radius;
+}
+
+.styled meter::-webkit-meter-optimum-value,
+.styled meter::-webkit-meter-suboptimum-value,
+.styled meter::-webkit-meter-even-less-good-value {
+    border-radius:  $global-radius;
+}
+
+.styled meter::-webkit-meter-optimum-value {
+    background: $success-color;
+}
+
+.styled meter::-webkit-meter-suboptimum-value {
+    background: $warning-color;
+}
+
+.styled meter::-webkit-meter-even-less-good-value  {
+    background: $alert-color;
+}
+
+
+/* Firefox */
+.styled meter::-moz-meter-bar {
+    border-radius: $global-radius;
+}
+
+.styled meter:-moz-meter-optimum::-moz-meter-bar {
+    background: $success-color;
+}
+
+.styled meter:-moz-meter-sub-optimum::-moz-meter-bar {
+    background: $warning-color;
+}
+
+.styled meter:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+    background: $alert-color;
+}
