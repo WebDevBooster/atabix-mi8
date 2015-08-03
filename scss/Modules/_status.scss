@@ -1,0 +1,19 @@
+.status {
+    display: block;
+    border-radius: 100%;
+    height: 8px;
+    width: 8px;
+    padding: 0 !important;
+    &.success {
+        background-color: $success-color;
+    }
+    &.error {
+        background-color: $alert-color;
+    }
+    &.warning {
+        background-color: $warning-color;
+    }
+    &.info {
+        background-color: $info-color;
+    }
+}

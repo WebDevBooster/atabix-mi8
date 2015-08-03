@@ -1,0 +1,145 @@
+.notification {
+    position: relative;
+    width: rem-calc(350);
+    margin: 0 auto 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(219, 228, 236);
+    border-radius: rem-calc(14);
+    background-color: rgb(219, 228, 236);
+    box-shadow: 0px 2px 10px 0px rgba(82, 104, 128, 0.1);
+    overflow: hidden;
+
+    header {
+        @extend .aliased;
+        margin-bottom: 0;
+        &.main {
+            font-size: rem-calc(12);
+            padding-left: rem-calc(18);
+            padding-right: rem-calc(18);
+            .title {
+                width: rem-calc(200);
+                float: left;
+                line-height: 1.2;
+                padding-top: rem-calc(10);
+                span {
+                    display: inline-block;
+                    width: 75%;
+                }
+                .fa-envelope {
+                    font-size: rem-calc(18);
+                    margin-right: rem-calc(25);
+                    &:before {
+                        position: absolute;
+                    }
+                }
+            }
+            .datetime {
+                float: right;
+                padding-top: rem-calc(10);
+                text-align: right;
+            }
+        }
+    }
+
+    &.open {
+        height: rem-calc(178);
+        header {
+            &.main {
+                height: rem-calc(48);
+                .title {
+                    .fa-envelope {
+                        &:before {
+                            margin-top: rem-calc(-25);
+                        }
+                    }
+                }
+            }
+        }
+        .content {
+            display: block;
+            height: rem-calc(128);
+            background-color: #ffffff;
+            border-bottom-left-radius: 14px;
+            border-bottom-right-radius: 14px;
+            header {
+                border-bottom: 1px solid $section-border-color;
+                color: $content-headertitle-color;
+                padding: rem-calc(0 18);
+                line-height: rem-calc(30);
+                height: rem-calc(30);
+                .title {
+                    width: 50%;
+                    text-transform: uppercase;
+                    font-size: rem-calc(12);
+                    font-family: $additional-font;
+                    float: left;
+                }
+                .status {
+                    width: 50%;
+                    font-size: rem-calc(12);
+                    float: right;
+                    text-align: right;
+                    @extend .subaliased;
+                    .priority1,
+                    .priority2,
+                    .priority3,
+                    .priority4,
+                    .priority5 {
+                        font-weight: 700;
+                    }
+
+                }
+            }
+            .body {
+                padding: rem-calc(15 18 10);
+                .th {
+                    margin-right: rem-calc(5);
+                    &.last {
+                        margin-right: 0;
+                    }
+                }
+            }
+            footer {
+                font-size: rem-calc(12);
+                padding: rem-calc(0 18);
+                .fi-x {
+                    font-weight: 200;
+                }
+            }
+        }
+    }
+    &.closed {
+        height: rem-calc(30);
+        cursor: pointer;
+        header {
+            &.main {
+                height: rem-calc(30);
+                opacity: 0.6;
+                &:hover {
+                    opacity: 1;
+                }
+                .title {
+                    padding-top: rem-calc(7);
+                    span {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        width: 130px;
+                    }
+                    .fa-envelope {
+                        &:before {
+                            margin-top: rem-calc(-16);
+                        }
+                    }
+                }
+                .datetime {
+                    padding-top: rem-calc(6);
+                }
+            }
+        }
+        .content {
+            display: none;
+        }
+    }
+}
