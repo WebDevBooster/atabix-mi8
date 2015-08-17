@@ -37,8 +37,11 @@
         letter-spacing: 1px;
         margin:rem-calc(0 0 15px 0);
 	}
-	.DTE_Form_Content,
-	.DTE_Footer {
+	.DTE_Form_Content {
 		padding:rem-calc(0 15px);
+	}
+	.DTE_Footer {
+		text-align: center;	
+		padding:rem-calc(0 15px 15px 15px);
 	}
 }
