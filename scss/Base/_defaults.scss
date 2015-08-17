@@ -199,7 +199,8 @@ table {
                     display: block;
                 }
             }
-            &:hover {
+            &:hover,
+            &.selected {
                 background: #fffeed;
                 td {
                     &.highlight {
