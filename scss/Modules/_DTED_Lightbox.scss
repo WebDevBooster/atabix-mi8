@@ -35,5 +35,10 @@
         font-size: rem-calc(15);
         line-height: rem-calc(40);
         letter-spacing: 1px;
+        margin:rem-calc(0 0 15px 0);
+	}
+	.DTE_Form_Content,
+	.DTE_Footer {
+		padding:rem-calc(0 15px);
 	}
 }
