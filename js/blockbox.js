@@ -399,8 +399,10 @@
 
                 // Load/refresh button
                 var loada = $("<a>").appendTo(toolbox);
-                var load = $("<i>").addClass("fa fa-refresh").on("click", function () { 
-                    alert("load");
+                var load = $("<i>").addClass("fa fa-refresh").on("click", { 'id': newid , 'blockbox' : blockbox } , function (event) {
+                    $.post(globalUrlPrefix+'/load-block', { 'id': event.data.id , 'blockbox' : event.data.blockbox }, function(json, textStatus, xhr) {
+	                    $("#widget"+json.id+" .container").html(json.html); 
+	                }, 'json');	                
                 }).appendTo(loada);
 
                 // Duplicate/copy button
