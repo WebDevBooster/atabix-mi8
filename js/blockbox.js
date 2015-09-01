@@ -38,12 +38,13 @@
                 this.gridster = $(".gridster ul").gridster({
 	                
                     widget_base_dimensions: this.settings.base_dimensions,
+                    max_cols: this.settings.max_cols,
                     resize: {
                         enabled: true,
                         max_size: this.settings.max_size,
-                        min_size: this.settings.min_size
+                        min_size: this.settings.min_size,
                     },
-                                    'widget_margins': [0,0],
+                    'widget_margins': [0,0],
                     serialize_params: function($w, wgd) { 
                         return {
                             id: $w.prop('id'),
@@ -59,7 +60,7 @@
             },
 		    
 		    drawContainer: function() {
-                               
+                           
                 var e = this;
                
                 var title = e.settings.title;
@@ -80,7 +81,8 @@
 				if (e.settings.preview == true) {
 					var li_preview = $("<li>").addClass("left").appendTo(ultab);
 					var a_preview = $("<a>").addClass("button radius secondary small").attr("id", "previewcontent").attr("href", "#preview").attr("role", "tab").attr("tabindex", "1").attr("aria-selected", "false").attr("aria-controls", "preview").html(" Preview").on("click", function () {
-						e.loadPreview();							
+						e.reloadPreview();
+						e.loadPreview();				
 					}).appendTo(li_preview);
 					var i_preview = $("<i>").addClass("fa fa-eye").prependTo(a_preview);
 				}
@@ -88,8 +90,8 @@
 				if (e.settings.mail == true) {
 					var li_mail = $("<li>").addClass("left").appendTo(ultab);
 					var a_mail = $("<a>").addClass("button radius secondary small").attr("id", "mailcontent").attr("href", "#mail").attr("role", "tab").attr("tabindex", "2").attr("aria-selected", "false").attr("aria-controls", "mail").html(" E-Mail").on("click", function () {
+						e.reloadMail();
 						e.loadMail();
-							
 					}).appendTo(li_mail);
 					var i_mail = $("<i>").addClass("fa fa-envelope-o").prependTo(a_mail);
 				}
@@ -136,7 +138,7 @@
 				
 				var section_widgetsettings = $("<section>").addClass("elementPanel widgetSettings collapsable").appendTo($(this.settings.blockboxsettings));
 				var title_widgetsettings = $("<div>").addClass("title").on("click", function(){
-					$( this ).parent().find(".content").slideToggle(700, "easeOutBounce");
+					e.cancelEdit();
 				}).appendTo(section_widgetsettings);
 				var h3_widgetsettings = $("<h3>").addClass("left").html("Widget settings").appendTo(title_widgetsettings);
 				var span_widgetsettings = $("<span>").addClass("collapse-icon right").appendTo(title_widgetsettings);
@@ -207,6 +209,7 @@
             
             cancelEdit: function(){
 	        	$(".elementPanel.collapsable.widgetSettings").find(".content").slideToggle(700, "easeOutBounce");
+	        	$(".contentBlock li :input").prop('disabled', false);
             },
             
             loadPreview: function(){
@@ -276,11 +279,23 @@
                     
                     var li  = $("<li>");
                     var div = $("<div>").addClass("option").appendTo(li);
+                    
+                    if(block.image && block.image.length > 0){
+                        var htmlAddBlock = "" + 
+                        "<div class=\"icon\"><img src='"+ block.image +"' style='height:32px'></div>" +
+                        "<div class=\"title\">" + block.title + "</div>";
+                    } else if (block.icon && block.icon.length > 0) {
+                        var htmlAddBlock = "" + 
+                        "<div class=\"icon\"><i class=\"fa fa-" + block.icon + "\"></i></div>" +
+                        "<div class=\"title\">" + block.title + "</div>";
+                    } else {
+                        var htmlAddBlock = "" + 
+                        "<div class=\"icon\"><i class=\"fa fa-square-o\"></i></div>" +
+                        "<div class=\"title\">" + block.title + "</div>";
+                    }
                     var a   = $("<a>").addClass("action").on("click", { name: block }, function (event) {
                         e.addBlock(event.data.name, "" , blockbox);
-                    }).html("" + 
-                        "<div class=\"icon\"><i class=\"fa fa-" + block.icon + "\"></i></div>" +
-                        "<div class=\"title\">" + block.title + "</div>").appendTo(div);
+                    }).html(htmlAddBlock).appendTo(div);
 
                     $(".actionList").append(li);
                 }
@@ -342,9 +357,7 @@
                 var e = this;
                 
                 id = datablock['id'];
-                
-                console.log(this.settings);
-                
+                                
                 if (datablock == "" ) {
 	                var loaddata = false;
 	                var newid = this.settings.iterator++;
@@ -360,19 +373,35 @@
                 var wrapper = $("<div>").addClass("wrapper text-wrapper").appendTo(li);
                 var container = $("<div style=\"background-color:"+this.settings.background_color+"\">").addClass("container").attr("id", "editor" + newid).html("<div class=\"loader\"><div class=\"loader-inner ball-pulse\"><div></div><div></div><div></div></div></div>").appendTo(wrapper)
                 var toolbox = $("<div>").addClass("toolbox").appendTo(wrapper);
-                if (datablock == "" ) {
-	                
-	                var newX = 3;
-	                var newY = 2;
+                if (datablock == "" ) {	                
 	                if (cloneid !== undefined) {
 		                var cloneElement = $("#widget"+cloneid);
-		                newX = $(cloneElement).attr("data-sizex") * 1;
-   		                newY = $(cloneElement).attr("data-sizey") * 1;
+		                var newX = $(cloneElement).attr("data-sizex") * 1;
+   		                var newY = $(cloneElement).attr("data-sizey") * 1;
+   		                var minX = $(cloneElement).attr("data-min-sizex") * 1;
+   		                var maxX = $(cloneElement).attr("data-max-sizex") * 1;
+   		                var minY = $(cloneElement).attr("data-min-sizey") * 1;
+   		                var maxY = $(cloneElement).attr("data-max-sizey") * 1;
+   		                $(li).attr('data-min-sizex', minX).attr('data-max-sizex', maxX).attr('data-min-sizey', minY).attr('data-max-sizey', minY);
+	                } else {
+		                var newX = block['size_x'] * 1;
+						var newY = block['size_y'] * 1;
+						var minX = block['min_x'] * 1;
+   		                var maxX = block['max_x'] * 1;
+   		                var minY = block['min_y'] * 1;
+   		                var maxY = block['max_y'] * 1;
+						 $(li).attr('data-min-sizex', minX).attr('data-max-sizex', maxX).attr('data-min-sizey', minY).attr('data-max-sizey', maxY);
 	                }
 		            var htmlgrid = this.gridster.add_widget(li, newX, newY);
+		            
                 }
                 else {
-                    var htmlgrid = this.gridster.add_widget(li, datablock['sizeX'], datablock['sizeY'], datablock['column'], datablock['row']);
+	                var sizeX 	= datablock['sizeX']*1;
+	                var sizeY 	= datablock['sizeY']*1;
+	                var column 	= datablock['column']*1;
+	                var row 	= datablock['row']*1;
+	                $(li).attr('data-min-sizex', datablock['minX']).attr('data-max-sizex', datablock['maxX']).attr('data-min-sizey', datablock['minY']).attr('data-max-sizey', datablock['maxY']);
+                    var htmlgrid = this.gridster.add_widget(li, sizeX, sizeY, column, row);
                 }
 
 
@@ -396,7 +425,7 @@
 			 			}
                 	}, 'json');
                 	}).appendTo(savea);
-
+				
                 // Load/refresh button
                 var loada = $("<a>").appendTo(toolbox);
                 var load = $("<i>").addClass("fa fa-refresh").on("click", { 'id': newid , 'blockbox' : blockbox } , function (event) {
@@ -434,7 +463,7 @@
 	                
 	                $.post(globalUrlPrefix+'/load-settings', data ,function(json) {
 					    if (json.status == 1) {
-		                	$( ".elementPanel.collapsable.widgetSettings" ).find(".content").slideToggle(700, "easeOutBounce");
+		                	$( ".elementPanel.collapsable.widgetSettings" ).find(".content").slideDown(700, "easeOutBounce");
 							$("#widgetSettingContent").html(json.html);
 							$('input.colorpicker').minicolors();
 							var searchurl = $(".customProductInput").attr("data-ajax--url");
@@ -457,12 +486,7 @@
 					                    cache: true
 					            },
 					            initSelection: function(element, callback) {
-						            var data = [];
-						            data.push({
-							            name: "name",
-							            id: 1
-						            });
-						            callback(data);
+						            
 						        },
 						        formatResult: function (item) { 
 						            var html="<li>";
@@ -529,7 +553,7 @@
 				}
 				else {
 					$.post(globalUrlPrefix+'/new-block', { 'newid': newid, 'block' : block , 'blockbox' : blockbox }, function(json, textStatus, xhr) {
-	                    $("#widget"+json.id+" .container").html(json.html);
+					    $("#widget"+json.id+" .container").html(json.html);
 	                }, 'json');
 				}
 				
