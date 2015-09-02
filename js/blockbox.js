@@ -106,7 +106,7 @@
             var contenttab = $("<div>").addClass("tabs-content").appendTo(content);
             var sectiontab = $("<section>").addClass("content active").attr("id", "edit").attr("role", "tabpanel").attr("aria-hidden", "false").appendTo(contenttab);
             var div_newsletterWrapper = $("<div>").addClass("newsletterWrapper").appendTo(sectiontab);
-            var div_contentblockContainer = $("<div>").addClass("contentblockContainer").attr("style", "width: 650px").appendTo(div_newsletterWrapper);
+            var div_contentblockContainer = $("<div>").addClass("contentblockContainer").attr("style", "width: 624px").appendTo(div_newsletterWrapper);
             var div_inner = $("<div>").addClass("inner").appendTo(div_contentblockContainer);
 
             var div_actionWrapper = $("<div>").addClass("actionWrapper").appendTo(div_inner);
@@ -123,7 +123,7 @@
                     e.reloadPreview();
                 }).appendTo(sectiontab_preview);
                 var itab_preview = $("<i>").addClass("fa fa-refresh").prependTo(spantab_preview);
-                var iframe_preview = $("<iframe>").attr("src", globalUrlPrefix+"/preview?id="+e.settings.blockbox).attr("id", "previewIFrame").attr("frameborder", "0").attr("width", "650px").attr("height", "1000").appendTo(sectiontab_preview);
+                var iframe_preview = $("<iframe>").attr("src", globalUrlPrefix+"/preview?id="+e.settings.blockbox).attr("id", "previewIFrame").attr("frameborder", "0").attr("width", "624px").attr("height", "1000").appendTo(sectiontab_preview);
             }
 
             if (e.settings.mail == true) {
