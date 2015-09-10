@@ -1,4 +1,5 @@
 .pageContent {
+    overflow-y: hidden;
     .row {
         &.main {
             height: 100%;
@@ -32,7 +33,7 @@
                 margin: 0;
             }
             input {
-                margin-bottom: 0!important;
+                margin-bottom: 0 !important;
             }
         }
     }
@@ -49,8 +50,8 @@
 
     #mainPanel {
         @include grid-column(12);
-        padding-left:0;
-        padding-right:0;
+        padding-left: 0;
+        padding-right: 0;
         padding-top: rem-calc(140);
         @media #{$large-up} {
             @include grid-column(8);
@@ -80,18 +81,18 @@
             max-width: 100%;
             right: 0;
             position: relative;
-            padding-left: 0!important;
-            padding-right: 0!important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
             @include grid-column(4);
         }
 
         &.showPanel {
-            right: 0!important;
+            right: 0 !important;
             @extend .slideInRight;
         }
 
         &.hidePanel {
-            right: rem-calc(-540)!important;
+            right: rem-calc(-540) !important;
         }
     }
 
