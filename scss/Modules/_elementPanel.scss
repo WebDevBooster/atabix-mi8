@@ -157,13 +157,15 @@
         // Datatables markup
 
         .dataTables_info {
-            padding: rem-calc(6);
+            padding: rem-calc(8);
             color: $body-font-color
         }
         .dataTables_length {
             margin-right: $column-gutter;
-            padding: rem-calc(6);
-            color: $body-font-color;
+            padding: rem-calc(6 16);
+            label {
+                color: $body-font-color;
+            }
         }
     }
 
