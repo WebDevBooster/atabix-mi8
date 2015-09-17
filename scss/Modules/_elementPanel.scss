@@ -26,16 +26,17 @@
             line-height: rem-calc(40);
             letter-spacing: 1px;
         }
+
         select,
+
         input {
             margin: 0;
         }
         .button {
             margin-bottom: 0;
-            margin-top: rem-calc(4);
+            margin-top: rem-calc(5);
             padding-top: 6px;
             padding-bottom: 5px;
-            background-color: #fff;
         }
         .dataTables_paginate {
             margin-right: -6px;
@@ -214,6 +215,7 @@
                 display: block;
             }
         }
+
         &.closed {
             .title {
                 h3 {
@@ -245,6 +247,7 @@
                 }
             }
         }
+
         .content {
             display: none;
         }
