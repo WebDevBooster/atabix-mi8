@@ -266,12 +266,7 @@ table {
         &:hover {
             color: $body-font-color;
             background: #ffffff;
-            border: 1px solid darken($section-border-color, 5%);
-            -ms-filter: drop-shadow(0 0 4px $section-title-color);
-            -webkit-filter: drop-shadow(0 0 4px $section-title-color);
-            -moz-filter: drop-shadow(0 0 4px $section-title-color);
-            -o-filter: drop-shadow(0 0 4px $section-title-color);
-            filter: drop-shadow(0 0 4px $section-title-color);
+            border: 1px solid darken($section-border-color, 10%);
         }
         &:focus,
         &:active {
