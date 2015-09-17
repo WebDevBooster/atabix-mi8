@@ -1,9 +1,12 @@
 $(function() {
-    $( ".elementPanel.collapsable .title" ).click(function(){
-        $( this).prev(".elementPanel").switchClass("open", "closed");
-        $( this ).next('.content').slideToggle(700, "easeOutBounce");
+    $(function() {
+        $( ".elementPanel.collapsable .title" ).click(function(){
+            $(this).parent(".elementPanel.open").switchClass("open","closed");
+            $(this).parent(".elementPanel.closed").switchClass("closed","open");
 
-        $(document).foundation('equalizer','reflow');
-        equalizeNow();
+            $(document).foundation('equalizer','reflow');
+            equalizeNow();
+            return false;
+        });
     });
 });
