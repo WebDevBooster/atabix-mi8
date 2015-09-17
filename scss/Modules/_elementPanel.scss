@@ -144,7 +144,6 @@
     .footer {
         padding: rem-calc(15);
         background: #ecf1f5;
-        height: rem-calc(67);
         overflow: hidden;
         .button {
             &.primary {
@@ -156,68 +155,82 @@
 
     &.collapsable {
         .title {
-            &:after {
-                float: right;
-                content: "";
-                display: block;
-                position: absolute;
-                right: 10px;
-                top: 10px;
-                height: 10px;
-                width: 10px;
-                border: 1px solid red;
-            }
-
             &:hover {
                 background: darken($section-title-color, 5%);
                 cursor: pointer;
                 transition: 250ms all ease;
             }
+        }
 
-            .collapse-icon {
-                width: 20px;
-                height: 20px;
-                float: right;
-                font-size: rem-calc(16);
-                @extend .fa;
-                @extend .fa-sort-desc;
-            }
-
-            &.open {
-                .collapse-icon {
+        &.open {
+            h3 {
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                    border-top: 4px solid $body-font-color;
+                    border-left: 4px solid transparent;
+                    border-right: 4px solid transparent;
                     transform: rotate(180deg);
-                    margin-right: 11px;
-                    margin-top: 5px;
+                }
+                &:after {
+                    content: '';
+                    position: absolute;
+                    right: 21px;
+                    top: 21px;
+                    border-top: 3px solid $section-title-color;
+                    border-left: 3px solid transparent;
+                    border-right: 3px solid transparent;
+                    transform: rotate(180deg);
                 }
             }
-            &.closed {
-                .collapse-icon {
-                    margin-top: rem-calc(8);
-                }
-            }
-        }
-        .content {
-            display: block;
-        }
-        &.closed {
             .title {
-                border-bottom: 0;
-                .collapse-icon {
-                    transform: rotate(180deg)!important;
-                    margin-right: 11px;
-                }
-                &.open {
-                    border-bottom: 1px solid $section-border-color;
-                    .collapse-icon {
-                        transform: rotate(360deg)!important;
-                        margin-right: 0;
-                        margin-top: 8px;
+                &:hover {
+                    h3 {
+                        &:after {
+                            border-top: 3px solid darken($section-title-color, 5%);
+                        }
                     }
                 }
             }
             .content {
-                display: none;
+                display: block;
             }
+        }
+        &.closed {
+            h3 {
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 21px;
+                    right: 20px;
+                    border-top: 4px solid $body-font-color;
+                    border-left: 4px solid transparent;
+                    border-right: 4px solid transparent;
+                }
+                &:after {
+                    content: '';
+                    position: absolute;
+                    right: 21px;
+                    top: 21px;
+                    border-top: 3px solid $section-title-color;
+                    border-left: 3px solid transparent;
+                    border-right: 3px solid transparent;
+                }
+            }
+            .title {
+                &:hover {
+                    h3 {
+                        &:after {
+                            border-top: 3px solid darken($section-title-color, 5%);
+                        }
+                    }
+                }
+            }
+        }
+        .content {
+            display: none;
         }
     }
 
