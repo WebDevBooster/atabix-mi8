@@ -145,11 +145,19 @@
         padding: rem-calc(15);
         background: #ecf1f5;
         overflow: hidden;
+        color: $body-font-color;
+        @include font-smoothing(on);
         .button {
             &.primary {
                 padding: rem-calc(7px 15px);
             }
 
+        }
+        .dataTables_info {
+            padding: 0;
+        }
+        .dataTables_length {
+            margin-right: $column-gutter;
         }
     }
 
