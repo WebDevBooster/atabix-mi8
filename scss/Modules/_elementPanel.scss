@@ -19,6 +19,7 @@
         overflow: hidden;
         border-top-left-radius: $global-radius;
         border-top-right-radius: $global-radius;
+        @include font-smoothing(on);
         h3 {
             color: #849db8;
             margin: 0;
