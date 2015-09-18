@@ -20,6 +20,7 @@
         border-top-left-radius: $global-radius;
         border-top-right-radius: $global-radius;
         @include font-smoothing(on);
+
         h3 {
             color: #849db8;
             margin: 0;
@@ -27,12 +28,11 @@
             line-height: rem-calc(40);
             letter-spacing: 1px;
         }
-
         select,
-
         input {
             margin: 0;
         }
+
         .button {
             margin-bottom: 0;
             margin-top: rem-calc(5);

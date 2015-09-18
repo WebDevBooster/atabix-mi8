@@ -41,35 +41,54 @@ $column-gutter: rem-calc(20);
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // We use these as default colors throughout
-$primary-color: #526880;
-$secondary-color: #6eb4ef;
-$section-border-color: #dbe4ec;
-$body-font-color: $primary-color;
-$sidepanel-bg-color: #f0f5fa;
-$mainpanel-bg-color: #fafcfd;
-$section-title-color: #eef2f6;
-$focus-color: #fffeed;
-$secondary-nav-color: #b5bdc6;
+$primary-color          : #526880;
+$secondary-color        : #6eb4ef;
+$section-border-color   : #dbe4ec;
+$body-font-color        : $primary-color;
+$sidepanel-bg-color     : #f0f5fa;
+$mainpanel-bg-color     : #fafcfd;
+$section-title-color    : #eef2f6;
+$focus-color            : #fffeed;
+$secondary-nav-color    : #b5bdc6;
 
-$primary-btn-color: $secondary-color;
-$secondary-btn-color: #fafcfd;
+$primary-btn-color      : $secondary-color;
+$secondary-btn-color    : #fafcfd;
 
-$header-color-primary:  $primary-color;
-$header-color-secondary: #849db8;
+$header-color-primary   :  $primary-color;
+$header-color-secondary : #849db8;
 
-$alert-color: #e74c3c;
-$success-color: #6fdf3d;
-$warning-color: #f08a24;
-$info-color: #a0d3e8;
+$alert-color            : #e74c3c;
+$success-color          : #6fdf3d;
+$warning-color          : #f08a24;
+$info-color             : #a0d3e8;
 
-// ADDITIONAL PROJECT COLORS
+// ADDITIONAL Mi8 COLORS
+
+$white                      : #FFFFFF;
+$white-smoke                : darken($white, 2%);
+$black                      : #000000;
+$client                     : #ffa71d;
+$content-headertitle-color  : #ced7e0;
 
 $white       : #FFFFFF;
-$white-smoke : darken($white, 2%);
+$ghost       : #FAFAFA;
+$snow        : #F9F9F9;
+$vapor       : #F6F6F6;
+$white-smoke : #F5F5F5;
+$silver      : #EFEFEF;
+$smoke       : #EEEEEE;
+$gainsboro   : #DDDDDD;
+$iron        : #CCCCCC;
+$base        : #AAAAAA;
+$aluminum    : #999999;
+$jumbo       : #888888;
+$monsoon     : #777777;
+$steel       : #666666;
+$charcoal    : #555555;
+$tuatara     : #444444;
+$oil         : #333333;
+$jet         : #222222;
 $black       : #000000;
-$client: #ffa71d;
-$content-headertitle-color: #ced7e0;
-
 
 // We use these to define default font weights
 $font-weight-normal: normal !default;
@@ -93,7 +112,6 @@ $font-smoothing: antialiased;
 // $opposite-direction: right;
 // $default-float: left;
 // $last-child-float: $opposite-direction;
-
 
 // We use these to make sure border radius matches unless we want it different.
 $global-radius: 5px;
