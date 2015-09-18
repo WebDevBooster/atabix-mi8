@@ -246,6 +246,11 @@
                 &:last-child {
                     margin-right: 0;
                 }
+                &.active {
+                    a {
+                        border: 1px solid $body-font-color;
+                    }
+                }
             }
         }
         .inner {
