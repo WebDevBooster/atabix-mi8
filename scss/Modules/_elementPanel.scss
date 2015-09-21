@@ -19,6 +19,7 @@
         overflow: hidden;
         border-top-left-radius: $global-radius;
         border-top-right-radius: $global-radius;
+        @include font-smoothing(on);
         h3 {
             color: #849db8;
             margin: 0;
@@ -26,16 +27,17 @@
             line-height: rem-calc(40);
             letter-spacing: 1px;
         }
+
         select,
+
         input {
             margin: 0;
         }
         .button {
             margin-bottom: 0;
-            margin-top: rem-calc(4);
+            margin-top: rem-calc(5);
             padding-top: 6px;
             padding-bottom: 5px;
-            background-color: #fff;
         }
         .dataTables_paginate {
             margin-right: -6px;
@@ -142,19 +144,32 @@
     }
 
     .footer {
-        padding: rem-calc(15);
         background: #ecf1f5;
         overflow: hidden;
+        color: $body-font-color;
+        line-height: 50px;
+        @include font-smoothing(on);
+
         .button {
             &.primary {
                 padding: rem-calc(7px 15px);
             }
+        }
 
+        // Datatables markup
+
+        .dataTables_info {
+            padding: rem-calc(8);
+            color: $body-font-color
+        }
+        .dataTables_length {
+            margin-right: $column-gutter;
+            padding: rem-calc(6 16);
+            label {
+                color: $body-font-color;
+            }
         }
     }
-
-
-    // Collapsable elementPanel
 
     &.collapsable {
         .title {
@@ -166,29 +181,29 @@
         }
 
         &.open {
-            h3 {
-                &:before {
-                    content: '';
-                    position: absolute;
-                    top: 20px;
-                    right: 20px;
-                    border-top: 4px solid $body-font-color;
-                    border-left: 4px solid transparent;
-                    border-right: 4px solid transparent;
-                    transform: rotate(180deg);
-                }
-                &:after {
-                    content: '';
-                    position: absolute;
-                    right: 21px;
-                    top: 21px;
-                    border-top: 3px solid $section-title-color;
-                    border-left: 3px solid transparent;
-                    border-right: 3px solid transparent;
-                    transform: rotate(180deg);
-                }
-            }
             .title {
+                h3 {
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: 20px;
+                        right: 20px;
+                        border-top: 4px solid $body-font-color;
+                        border-left: 4px solid transparent;
+                        border-right: 4px solid transparent;
+                        transform: rotate(180deg);
+                    }
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        right: 21px;
+                        top: 21px;
+                        border-top: 3px solid $section-title-color;
+                        border-left: 3px solid transparent;
+                        border-right: 3px solid transparent;
+                        transform: rotate(180deg);
+                    }
+                }
                 &:hover {
                     h3 {
                         &:after {
@@ -201,28 +216,29 @@
                 display: block;
             }
         }
+
         &.closed {
-            h3 {
-                &:before {
-                    content: '';
-                    position: absolute;
-                    top: 21px;
-                    right: 20px;
-                    border-top: 4px solid $body-font-color;
-                    border-left: 4px solid transparent;
-                    border-right: 4px solid transparent;
-                }
-                &:after {
-                    content: '';
-                    position: absolute;
-                    right: 21px;
-                    top: 21px;
-                    border-top: 3px solid $section-title-color;
-                    border-left: 3px solid transparent;
-                    border-right: 3px solid transparent;
-                }
-            }
             .title {
+                h3 {
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: 21px;
+                        right: 20px;
+                        border-top: 4px solid $body-font-color;
+                        border-left: 4px solid transparent;
+                        border-right: 4px solid transparent;
+                    }
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        right: 21px;
+                        top: 21px;
+                        border-top: 3px solid $section-title-color;
+                        border-left: 3px solid transparent;
+                        border-right: 3px solid transparent;
+                    }
+                }
                 &:hover {
                     h3 {
                         &:after {
@@ -232,60 +248,44 @@
                 }
             }
         }
+
         .content {
             display: none;
         }
     }
 
-    // ElementPanel with tabs
-
+    // Elementpanel with tabs
     &.withTabs {
-        .tabsWrapper {
-            padding: rem-calc(15 0 0 15);
-            list-style-type: none;
-            background-color: $section-title-color;
-            li {
-                margin-right: 7px;
-                float: left;
-                &:last-child {
-                    margin-right: 0;
+        .title {
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+        ul.tabs {
+            padding-top: 0!important;
+            margin-left: 0;
+            z-index: 10;
+            .tab-title {
+                a {
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                    padding-left: rem-calc(30);
+                    padding-right: rem-calc(30);
+                    color: #acb5c1;
                 }
                 &.active {
-                    .tab {
-                        border-top: 1px solid $section-border-color;
-                        border-left: 1px solid $section-border-color;
-                        border-right: 1px solid $section-border-color;
-                        &:after {
-                            content: "";
-                            position: absolute;
-                            width: 100%;
-                            height: 4px;
-                            background-color: #ffffff;
-                            bottom: -2px;
-                            z-index: 10;
-                            left: 0;
+                    a {
+                        color: $secondary-color;
+                        background-color: $white;
+                        &:hover {
+                            color: $secondary-color;
                         }
                     }
                 }
-                .tab {
-                    position: relative;
-                    border-bottom: 0;
-                    padding: 10px;
-                    border-top-left-radius: $global-radius;
-                    border-top-right-radius: $global-radius;
-                }
             }
-        }
 
+        }
         .tabs-content {
-            border-top: 1px solid $section-border-color;
-            .inner {
-                background-color: #ffffff;
-                padding: $column-gutter / 2;
-                &.noPadding {
-                    padding: 0;
-                }
-            }
+            border-top: 0;
         }
     }
 
