@@ -11,3 +11,15 @@
         background-color: $section-border-color;
     }
 }
+
+.dataTables_wrapper {
+    .elementPanel {
+        .footer {
+            background: #ecf1f5;
+            overflow: hidden;
+            color: $body-font-color;
+            line-height: 50px;
+            @include font-smoothing(on);
+        }
+    }
+}
