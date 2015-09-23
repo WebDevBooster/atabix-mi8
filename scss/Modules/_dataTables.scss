@@ -2,6 +2,7 @@
     padding: rem-calc(18) rem-calc(30);
     line-height: rem-calc(34);
 }
+
 .paginate_button {
     padding: rem-calc(17) rem-calc(10);
     font-size: rem-calc(14);
@@ -21,6 +22,16 @@
             padding:0;
             height: auto;
             @include font-smoothing(on);
+        }
+    }
+}
+
+table.dataTable {
+    thead {
+        th.sorting {
+            &:hover {
+                background: url('images/sort_both.png') no-repeat center right;
+            }
         }
     }
 }
