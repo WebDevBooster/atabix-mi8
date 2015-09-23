@@ -6,7 +6,6 @@
     padding: rem-calc(17) rem-calc(10);
     font-size: rem-calc(14);
     line-height: rem-calc(34);
-    
     &:hover {
         background-color: $section-border-color;
     }
@@ -19,6 +18,8 @@
             overflow: hidden;
             color: $body-font-color;
             line-height: 50px;
+            padding:0;
+            height: auto;
             @include font-smoothing(on);
         }
     }
