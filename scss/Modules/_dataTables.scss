@@ -28,10 +28,8 @@
 
 table.dataTable {
     thead {
-        th.sorting {
-            &:hover {
-                background: url('images/sort_both.png') no-repeat center right!important;
-            }
+        .sorting {
+            background: none;
         }
     }
 }
