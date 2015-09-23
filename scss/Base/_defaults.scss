@@ -235,6 +235,9 @@ table {
     &.border-right {
 	    border-right: 1px solid $section-border-color;
     }
+    &.border-left {
+	    border-left: 1px solid $section-border-color;
+    }
 }
 
 // Table-cell alignment
