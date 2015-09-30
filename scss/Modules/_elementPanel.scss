@@ -45,7 +45,7 @@
         .dataTables_paginate {
             margin-right: -6px;
             .paginate_button {
-                line-height: rem-calc(37)
+                line-height: rem-calc(41)
             }
         }
     }
@@ -260,7 +260,7 @@
         .tabsWrapper {
             padding: rem-calc(15) 0 0 rem-calc(15);
             list-style-type: none;
-            background-color: $sidepanel-bg-color;;
+            background-color: $sidepanel-bg-color;
             li {
                 margin-right: 7px;
                 float: left;
