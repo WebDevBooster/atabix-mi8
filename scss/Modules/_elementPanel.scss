@@ -148,9 +148,9 @@
     }
 
     .footer {
-        padding: rem-calc(18px 8px);
+        padding: rem-calc(15px);
         background: #ecf1f5;
-        height: 4.1875rem;
+        height: rem-calc(65);
         overflow: hidden;
         @include font-smoothing(on);
 
