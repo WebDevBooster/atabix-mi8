@@ -20,6 +20,7 @@
         border-top-left-radius: $global-radius;
         border-top-right-radius: $global-radius;
         @include font-smoothing(on);
+
         h3 {
             color: #849db8;
             margin: 0;
@@ -147,7 +148,7 @@
     }
 
     .footer {
-        padding: .9375rem;
+        padding: rem-calc(18px 8px);
         background: #ecf1f5;
         height: 4.1875rem;
         overflow: hidden;
