@@ -39,3 +39,14 @@ function equalizeNow() {
 $(document).ready(function(){
     equalizeNow();
 });
+
+
+// Equalize on tab click
+$(document).foundation({
+    tab: {
+        callback : function (tab) {
+            console.log(tab);
+            equalizeNow();
+        }
+    }
+});
