@@ -111,9 +111,6 @@
                 color: $secondary-color;
                 @include font-smoothing(on);
             }
-            select {
-                margin-bottom: 0;
-            }
 
             .has-tip {
                 font-size: rem-calc(14);
