@@ -1,0 +1,10 @@
+table {
+    &.small {
+        tr {
+            td {
+                padding:rem-calc(5px);
+                font-size: rem-calc(12px);
+            }
+        }
+    }
+}
