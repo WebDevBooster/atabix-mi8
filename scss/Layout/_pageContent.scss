@@ -49,6 +49,23 @@
         min-height: calc(100vh - 142px);
         width: 100%;
         float: right;
+        
+        header {
+            position: relative;
+            border-bottom: 1px solid $section-border-color;
+            padding: 0 0 15px;
+            margin-bottom: 15px;
+            @include clearfix();
+            h1 {
+                margin: 0;
+            }
+            input {
+                margin-bottom: 0 !important;
+            }
+            select {
+                margin-bottom: 0;
+            }
+        }
     }
 
     #mainPanel {
