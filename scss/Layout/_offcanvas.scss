@@ -18,8 +18,10 @@
                 height: rem-calc(48px);
                 right: 0;
                 top:0;
-                background: yellow;
                 color: white;
+                text-align: center; 
+                line-height: rem-calc(48px);
+                cursor: pointer;
             }
             a {
                 display: block;
