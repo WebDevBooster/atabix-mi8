@@ -92,11 +92,10 @@ module.exports = function(grunt) {
                             , 'js/toggleSidepanel.js'
                             , 'js/elementPanel-collapse.js'
                             , 'js/notification-collapse.js'
-                            , 'js/offcanvasToggle.js'
+                            , 'js/offcanvasNavToggle.js'
                             , 'js/globalSearch.js'
                             , 'js/fixedHeight.js'
                             , 'js/autosave.js'
-
                             , 'js/init.js'
                         ]
                     }
