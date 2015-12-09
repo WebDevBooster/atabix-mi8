@@ -5,6 +5,8 @@ $('.offcanvas ul.menu .has-subs').click(function() {
 });
 
 $('.offcanvas span').on('click', function(){
-   console.log("click")
+   console.log("click");
    $(this).find('.submenu').slideToggle(100); 
 });
+
+console.log("test");
