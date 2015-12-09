@@ -1,4 +1,4 @@
-$('.offcanvas').on('click', 'span', function(){
+$('.offcanvas ul li.has-subs').on('click', 'span', function(){
     $(this).toggleClass('fa-plus').toggleClass('fa-minus');
     $(this).find('.submenu').slideToggle(100); 
 });
