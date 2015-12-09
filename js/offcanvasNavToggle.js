@@ -3,3 +3,8 @@ $('.offcanvas ul.menu .has-subs').click(function() {
     $(this).find('.submenu').slideToggle();
     $(this).parent().siblings().next().slideToggle();
 });
+
+$('.offcanvas span').on('click', function(){
+   console.log("click")
+   $(this).find('.submenu').slideToggle(100); 
+});
