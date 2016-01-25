@@ -63,8 +63,9 @@
             searchInput: {},
             searchDelay: 1000,
             searchTimeout: false,
-            labelSelect: {}
+            labelSelect: {},
             
+            onSearch: function() {}
 		};
         
 		// The actual plugin constructor
@@ -311,6 +312,9 @@
                     				    });
                     				}
             				    }
+            				    
+            				    // Execute OnSearch handler:
+            				    if(tmp.onSearch) tmp.onSearch;
     				        } else {
     				            swal(json.title, json.msg, 'error');
     				        }
