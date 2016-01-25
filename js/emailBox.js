@@ -65,7 +65,8 @@
             searchTimeout: false,
             labelSelect: {},
             
-            onSearch: function() {}
+            onSearch: function() {},
+            onPreviewLoad: function() {}
 		};
         
 		// The actual plugin constructor
@@ -314,7 +315,7 @@
             				    }
             				    
             				    // Execute OnSearch handler:
-            				    if(tmp.onSearch) tmp.onSearch;
+                                tmp.settings.onSearch();
     				        } else {
     				            swal(json.title, json.msg, 'error');
     				        }
@@ -382,6 +383,9 @@
                     
     				this.composePane.hide();
     				this.previewPane.show();
+				    
+				    // Execute onPreviewLoad handler:
+                    this.settings.onPreviewLoad();
 				},
 				
 				clearPreview: function() {
