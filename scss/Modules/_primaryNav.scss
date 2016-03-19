@@ -74,7 +74,7 @@
                             .categoryTitle {
                                 background: $section-title-color;
                                 padding: rem-calc(5) rem-calc(17);
-                                font-size: 12px;
+                                font-size: rem-calc(12);
                                 text-transform: uppercase;
                                 margin-bottom: 0;
                                 color: $body-font-color;
