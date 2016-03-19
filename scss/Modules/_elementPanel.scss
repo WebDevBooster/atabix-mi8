@@ -34,7 +34,7 @@
             margin: 2px 0;
         }
         label {
-            line-height: 40px;
+            line-height: rem-calc(40);
         }
 
         .button {
@@ -78,7 +78,7 @@
                 font-size: $h3-font-size;
                 margin-bottom: rem-calc(5);
                 &.sectionTitle {
-                    font-size: 14px;
+                    font-size: rem-calc(14);
                     margin-bottom: 5px;
                     letter-spacing: 1px;
                     font-weight: normal;
@@ -189,8 +189,8 @@
                     &:before {
                         content: '';
                         position: absolute;
-                        top: 20px;
-                        right: 20px;
+                        top: rem-calc(20);
+                        right: rem-calc(20);
                         border-top: 4px solid $body-font-color;
                         border-left: 4px solid transparent;
                         border-right: 4px solid transparent;
@@ -199,8 +199,8 @@
                     &:after {
                         content: '';
                         position: absolute;
-                        right: 21px;
-                        top: 21px;
+                        right: rem-calc(21);
+                        top: rem-calc(21);
                         border-top: 3px solid $section-title-color;
                         border-left: 3px solid transparent;
                         border-right: 3px solid transparent;
@@ -226,8 +226,8 @@
                     &:before {
                         content: '';
                         position: absolute;
-                        top: 21px;
-                        right: 20px;
+                        top: rem-calc(21);
+                        right: rem-calc(20);
                         border-top: 4px solid $body-font-color;
                         border-left: 4px solid transparent;
                         border-right: 4px solid transparent;
@@ -235,8 +235,8 @@
                     &:after {
                         content: '';
                         position: absolute;
-                        right: 21px;
-                        top: 21px;
+                        right: rem-calc(21);
+                        top: rem-calc(21);
                         border-top: 3px solid $section-title-color;
                         border-left: 3px solid transparent;
                         border-right: 3px solid transparent;

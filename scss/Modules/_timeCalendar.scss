@@ -52,6 +52,10 @@
     }
 }
 
+.fc-button {
+    font-size: rem-calc(16) !important;
+}
+
 .fc-toolbar {
     .fc-button-group {
         .fc-state-default {
@@ -83,7 +87,7 @@
     .fc-center {
         h2 {
             text-transform: uppercase;
-            font-size: 15px;
+            font-size: rem-calc(15px);
             font-weight: 600;
             padding-top: 6px;
         }
