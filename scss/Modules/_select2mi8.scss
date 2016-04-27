@@ -72,9 +72,13 @@
 		font-size: rem-calc(14px);
 		line-height: rem-calc(21px);
 		padding: rem-calc(8px);
-		color: #b2bbc5;
+		color: $primary-color;
 		&:hover {
-			background: #526880;
+			background: $primary-color;
+			color: white;
+		}
+		&.select2-highlighted {
+			background: $primary-color;
 			color: white;
 		}
 	}
