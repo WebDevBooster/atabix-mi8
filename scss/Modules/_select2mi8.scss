@@ -81,5 +81,12 @@
 			background: $primary-color;
 			color: white;
 		}
+
+		.select2-result-label {
+			li {
+				background: $primary-color;
+				color: white;
+			}
+		}
 	}
 }
