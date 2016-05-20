@@ -16,8 +16,8 @@
             height: 100%;
             padding-left: rem-calc(20);
             padding-right: rem-calc(20);
-            padding-top: rem-calc(12);
-            padding-bottom: rem-calc(12);
+            padding-top: rem-calc(5);
+            padding-bottom: rem-calc(10);
             border-left: 1px solid $section-border-color;
             cursor: pointer;
             transition: 250ms all ease;
@@ -65,7 +65,7 @@
                         -ms-font-smoothing: antialiased;
                         -o-font-smoothing: antialiased;
                         &:before {
-                            margin: 7px 0 0;
+                            margin: rem-calc(10 0 0);
                         }
                     }
                     &:hover {
