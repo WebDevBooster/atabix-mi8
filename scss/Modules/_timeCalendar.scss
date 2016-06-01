@@ -48,7 +48,7 @@
         position: relative;
         border: 0!important;
         @extend .animated;
-        @extend .bounceInTop;
+        @extend .bounceInTop !optional;
     }
 }
 
@@ -62,10 +62,7 @@
             background-image: none;
             background-color: $body-font-color;
             color: #ffffff;
-            text-shadow: none;
-            box-shadow: none;
-            &.fc-state-active {
-                background-color: transparentize($body-font-color, 0.4);
+            text-shadow: none;§sparentize($body-font-color, 0.4);
             }
         }
         .fc-today-button {
